@@ -15,8 +15,7 @@ function submitForm() {
         var email = document.getElementById("email").value;
         var message = document.getElementById("message").value;
 
-  // Send form data to server (you would need to implement this part yourself)
-  // ...
+  // Send form data to server 
 
   // Show success message
         $("#successModal").modal("show");

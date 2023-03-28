@@ -144,7 +144,13 @@ div#prices {
         transition-duration: 0.3s;
         transition-property: transform;
     }
+
+.footer{
+
+        background-color: #2C2C2C;
+}
     
+
     .hvr-grow:hover,
     .hvr-grow:focus,
     .hvr-grow:active {
