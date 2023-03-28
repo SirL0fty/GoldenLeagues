@@ -2,50 +2,48 @@
 <!-- {% block title %}Welcome to MSL - Multiple Sports Leagues{% endblock %} -->
 
 {% block content %}
-<img class="bg-image" src="/static/sports-tools.jpg" alt="Background mage" />
+<img class="bg-image" src="/static/assets/sports-tools.jpg" alt="Background mage" />
 <!-- Masthead-->
-<header class="masthead">
+<header class="cover">
   <div class="container">
-    <div class="masthead-subheading">Welcome to MSL - Multi Sports League</div>
-    <div class="masthead-heading text-uppercase">
+    <div class="cover-subheading">Welcome to MSL - Multi Sports League</div>
+    <div class="cover-heading text-uppercase">
       Making leagues fun and friendly for all!
     </div>
     <a class="btn btn-custom text-uppercase" href="#league">More Detail</a>
   </div>
 </header>
-<!-- League -->
-<section class="page-section" id="league">
-  <div class="container">
-    <div class="text-center">
-      <h2 class="section-heading text-uppercase">Multi Sports Support</h2>
-      <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-    </div>
-    <div class="row text-center">
-      <div class="col-md-4">
-        <span class="fa-stack fa-4x">
-          <i class="fas fa-circle fa-stack-2x text-primary"></i>
-          <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
-        </span>
-        <h4 class="my-3">For League Admins</h4>
-        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+<!-- Featured -->
+<section class="featured-section" id="featured">
+  <div class="text-center container px-4 py-5" id="featured-3">
+    <h2 class="featured-heading">Featured Sports</h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3 justify-content-center">
+      <div class="feature">
+        <div class="justify-content-center">
+          <img src="/static/assets/icons/golf.png" alt="Golf Icon" class="img-fluid" id="icon">
+        </div>
+        <h3 class="fs-2">Golf</h3>
+        <p>Our golf league software gives admin, manager and players a simple interface to run a fun and friendly competition.</p>
       </div>
-      <div class="col-md-4">
-        <span class="fa-stack fa-4x">
-          <i class="fas fa-circle fa-stack-2x text-primary"></i>
-          <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
-        </span>
-        <h4 class="my-3">For League Managers</h4>
-        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+      <div class="feature">
+        <div class="justify-content-center">
+          <img src="/static/assets/icons/football.png" alt="Golf Icon" class="img-fluid" id="icon">
+        </div>
+        <h3 class="fs-2">Football</h3>
+        <p>Our Football league software alows your team to track their scores across the local teams.</p>
       </div>
-      <div class="col-md-4">
-        <span class="fa-stack fa-4x">
-          <i class="fas fa-circle fa-stack-2x text-primary"></i>
-          <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
-        </span>
-        <h4 class="my-3">For League Players</h4>
-        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+			<div class="feature">
+        <div class="justify-content-center">
+          <img src="/static/assets/icons/rugby.png" alt="Golf Icon" class="img-fluid" id="icon">
+        </div>
+        <h3 class="fs-2">Rugby</h3>
+        <p>Our rugby league software gives everyone access to the latest scores and league tables across the game.</p>
       </div>
-    
+        </div>
+      </div>
+</section>
+    <!-- About -->
+		<section class="about-section" id="about">
     <div id="about" class="container-fluid">
       <div class = "text- align = center">
       <div class="row">
@@ -56,19 +54,54 @@
           <p class="text-muted" >At MSL, we believe that sports are an integral part of building healthy communities and promoting a healthy lifestyle. Our league is open to individuals of all ages and skill levels, from beginners to seasoned athletes. We offer a range of divisions, so you can find the one that best suits your level of play. </p>
           <p class="text-muted">Our league is run by a dedicated team of organizers who are passionate about sports and committed to creating a fun and inclusive environment for all participants. We strive to provide a positive experience for our players, with fair and consistent rules, and a focus on good sportsmanship. </p>
           <p class="text-muted">So, whether you're looking to compete at a high level, stay active, or simply meet new people who share your love of sports, MSL has something for everyone. Join us today and experience the excitement of multiple sports in a fun and supportive environment! </p>
-          <br><button  type = "button" class="btn> Get in Touch</button>
     </div>
-    <div id="Contact" class="container-fluid">
-      <div class="row">
-        <div class="col-sm-8">
-        </div>  
-        <h2>Contact US</h2><br>
-          <h4>I created this website, to help sport enthusiasts like myself keep track of their leagues. I wanted to do this in a simple manner where everything is easy to use and where you can get all the information you need from your league, competition details, venues and more.</h4><br>
-          <p class="text-muted" >At MSL, we believe that sports are an integral part of building healthy communities and promoting a healthy lifestyle. Our league is open to individuals of all ages and skill levels, from beginners to seasoned athletes. We offer a range of divisions, so you can find the one that best suits your level of play. </p>
-          <p class="text-muted">Our league is run by a dedicated team of organizers who are passionate about sports and committed to creating a fun and inclusive environment for all participants. We strive to provide a positive experience for our players, with fair and consistent rules, and a focus on good sportsmanship. </p>
-          <p class="text-muted">So, whether you're looking to compete at a high level, stay active, or simply meet new people who share your love of sports, MSL has something for everyone. Join us today and experience the excitement of multiple sports in a fun and supportive environment! </p>
-          <br><button  type = "button" class="btn> Get in Touch</button>
+</section>
+<!-- Contact -->
+<section class="contact-section" id="contact">
+<div class="container">
+  <div class="row p-3">
+    <div class="col-md-6">
+      <h2>Contact Us</h2>
+			<p style="width: 50%;">Do you have any questions for us? Please leave a message and we will get back to you as soon as we can.</p>
+      <form action="#" method="post" onsubmit="return submitForm();">
+  <div class="form-group">
+    <label for="name">Name:</label>
+    <input type="text" class="form-control" id="name" name="name" required>
+  </div>
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input type="email" class="form-control" id="email" name="email" required>
+  </div>
+  <div class="form-group">
+    <label for="message">Message:</label>
+    <textarea class="form-control" rows="3" id="message" name="message" required></textarea>
+  </div>
+  <button type="submit" class="btn btn-custom">Submit</button>
+</form>
+
+<!-- Modal -->
+<div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="successModalLabel">Message Sent</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Your message has been sent successfully.
+      </div>
     </div>
   </div>
+</div>
+    </div>
+    <div class="col-md-6">
+      <h2>Location</h2>
+      <div id="map"></div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAR28qaCCLVHtyYOOcdweWNWsYZzn4mLow&callback=initMap" async defer></script>
+    </div>
+  </div>
+</div>
 </section>
 {% endblock %}
