@@ -7,7 +7,7 @@ body {
 
 .bg-image {
         width: 100vw;
-        height: 800px;
+        height: 40rem;
         object-fit: cover;
         position: absolute;
         top: 0;
@@ -37,8 +37,8 @@ a.nav-link:hover {
 }
 
 header.cover {
-        padding-top: 10.5rem;
-        padding-bottom: 20rem;
+        padding-top: 10rem;
+        padding-bottom: 8rem;
         text-align: center;
         color: #fff;
         height: 100%;
@@ -59,7 +59,9 @@ header.cover .cover-heading {
         margin-bottom: 2rem;
         font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
-
+div#featured-3 {
+        padding-bottom: 1rem!important;
+    }
 #icon{
 
         width: 5em;
@@ -78,8 +80,8 @@ header.cover .cover-heading {
 
 @media (min-width: 768px) {
         header.cover {
-                padding-top: 17rem;
-                padding-bottom: 12.5rem;
+                padding-top: 10rem;
+                padding-bottom: 8rem;
         }
 
         header.cover .cover-subheading {
@@ -125,4 +127,43 @@ header.cover .cover-heading {
         font-size: 16px;
         padding: 10px 20px;
         margin: 10px;
+}
+div#prices {
+        padding:0 30%;
+}
+.pricecol:hover{
+        background-color: rgba(0, 0, 0, 0.03);
+}
+.hvr-grow {
+        display: inline-block;
+        vertical-align: middle;
+        transform: translateZ(0);
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+        backface-visibility: hidden;
+        -moz-osx-font-smoothing: grayscale;
+        transition-duration: 0.3s;
+        transition-property: transform;
+    }
+    
+    .hvr-grow:hover,
+    .hvr-grow:focus,
+    .hvr-grow:active {
+        transform: scale(1.1);
+    }
+#golf-card{
+        background: no-repeat url("/static/assets/icons/golf.png") top center;
+        background-size: 4rem 5rem;
+}
+
+#football-card{
+        background: no-repeat url("/static/assets/icons/football.png") top center;
+        background-size: 5rem;
+}
+
+#rugby-card{
+        background: no-repeat url("/static/assets/icons/rugby.png") top center;
+        background-size: 5rem;
+}
+.feature{
+        padding-top:6rem;
 }
