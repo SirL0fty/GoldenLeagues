@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block content %}
-<img class="bg-image" src="/static/assets/sports-tools.jpg" alt="Background mage" />
+<img class="bg-image" src="{{ url_for('static', filename='assets/sports-tools.jpg') }}">
 <!-- Header-->
 <header class="cover">
   <div class="container">
