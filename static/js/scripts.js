@@ -8,23 +8,22 @@ const navEl = document.querySelector('.navbar');
                 }
         })
 
-
 function submitForm() {
-  // Get form data
+        // Get form data
         var name = document.getElementById("name").value;
         var email = document.getElementById("email").value;
         var message = document.getElementById("message").value;
 
-  // Send form data to server 
+        // Send form data to server
 
-  // Show success message
+        // Show success message
         $("#successModal").modal("show");
 
-  // Clear the form
+        // Clear the form
         document.getElementById("name").value = "";
         document.getElementById("email").value = "";
         document.getElementById("message").value = "";
 
-  // Prevent the form from submitting normally
+         // Prevent the form from submitting normally
         return false;
 }

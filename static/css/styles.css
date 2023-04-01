@@ -7,7 +7,7 @@ body {
 
 .bg-image {
         width: 100vw;
-        height: 40rem;
+        height: 100%;
         object-fit: cover;
         position: absolute;
         top: 0;
@@ -32,8 +32,10 @@ a.nav-link:hover {
 }
 
 .navbar-scrolled {
-        background-color: #2C2C2C;
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0, 0.15);
+        position: sticky;
+        width: 100%;
+        background-color: #2c2c2c;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 header.cover {
@@ -60,8 +62,10 @@ header.cover .cover-heading {
         font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 div#featured-3 {
-        padding-bottom: 1rem!important;
-    }
+        padding-bottom: 1rem !important;
+        margin-top:2rem;
+}
+
 #icon{
 
         width: 5em;
@@ -145,24 +149,63 @@ div#prices {
         transition-property: transform;
     }
 
-#footer{
+.footer{
 
         background-color: #2c2c2c;
 }
 
-.fa-facebook {
-        color: blue;
+.fa-facebook:before {
+        font-family: FontAwesome;
+        content: "\f09a";
+        color: #1877F2;
 }
 
-a {
+.fa-twitter:before {
+        font-family: FontAwesome;
+        content: "\f099";
+        color: #1DA1F2;
+}
+
+.fa-instagram:before {
+        font-family: FontAwesome;
+        content: "\f16d";
+        color: #E4405F;
+}
+
+.social-icons li {
+        display: inline-block;
+        margin-right: 10px;
+}
+
+
+
+.footer-links li a {
         color: white;
         font-weight: 500;
         text-decoration: none;
 }
 
-a:hover {
+.footer-links li a:hover {
         color: #f6bc00;
         font-weight: 500;
+}
+
+a.contact-num p {
+        color: white;
+                font-weight: 500;
+                text-decoration: none !important;
+}
+
+.heading {
+        color: #f6bc00;
+        font-weight: 500;
+}
+
+a.contact-num:hover p {
+
+        color: #f6bc00;
+        font-weight: 500;
+        text-decoration: none !important;
 }
 
     .hvr-grow:hover,

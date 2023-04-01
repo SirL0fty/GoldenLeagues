@@ -8,31 +8,31 @@
     <div class="cover-heading text-uppercase">
       Making leagues more fun and friendly for everyone!
     </div>
-    <a class="btn btn-custom text-uppercase" href="#about">More Detail</a>
+    <a class="btn btn-custom text-uppercase mt-5" href="#featured">More Detail</a>
   </div>
 </header>
 <!-- Featured -->
-<section class="featured-section" id="featured">
+<section class="featured-section pt-5" id="featured">
   <div class="text-center container px-4 py-5" id="featured-3">
     <h2 class="featured-heading">Featured Sports</h2>
     <div class="row g-4 py-5 row-cols-1 row-cols-lg-3 justify-content-center">
       <div class="feature" id="golf-card">
         <h3 class="fs-2">Golf</h3>
-        <p>Our awesome golf league software offers admins, managers, and players a super user-friendly platform to run a fun and friendly competition! Get ready to tee off and enjoy some seriously good times on the greens!</p>
+        <p>Looking for a user-friendly platform to run a golf competition? Our awesome golf league software is just what you need! Admins, managers, and players alike will love using our platform to stay organized and have fun on the greens!</p>
       </div>
       <div class="feature" id="football-card">
         <h3 class="fs-2">Football</h3>
-        <p>Get ready to score big with our amazing Football league software! Our platform allows your team to easily track scores against local competitors while having a ton of fun on the pitch. So, lace up your boots, grab your kit, and get ready to dominate the field with a smile on your face!</p>
+        <p>If you're looking for the best way to track scores and stay on top of the competition in your local football league, our amazing Football league software is the answer! Our platform is designed to help you and your team have a ton of fun on the pitch while staying up to date on the latest scores and standings.</p>
       </div>
 			<div class="feature" id="rugby-card">
         <h3 class="fs-2">Rugby</h3>
-        <p>Ready to scrum down and tackle the competition? Our incredible rugby league software makes it easy for everyone to access the latest scores and league tables across the game, all while having a blast! So, grab your boots, line up your team, and get ready to score some serious points both on and off the field!</p>
+        <p>Ready to take on the competition in the world of rugby? Our incredible rugby league software makes it easy for everyone to access the latest scores and league tables across the game, all while having a blast! So, grab your boots, line up your team, and get ready to score some serious points both on and off the field!</p>
       </div>
         </div>
       </div>
 </section>
     <!-- About -->
-		<section class="about-section" id="about">
+		<section class="about-section pt-5" id="about">
     <div id="about" class="container-fluid">
       <div class = "text- align = center">
       <div class="row">
@@ -90,12 +90,12 @@
     <hr />
 <!-- Contact -->
 <section class="contact-section" id="contact">
-<div class="container">
+<div class="container ">
   <div class="row p-3">
     <div class="col-md-6">
       <h2>Contact Us</h2>
 			<p style="width: 50%;">Do you have any questions for us? Please leave a message and we will get back to you as soon as we can.</p>
-      <form action="#" method="post" onsubmit="return submitForm();">
+      <form action="#" method="post">
   <div class="form-group">
     <label for="name">Name:</label>
     <input type="text" class="form-control" id="name" name="name" required>
@@ -108,17 +108,16 @@
     <label for="message">Message:</label>
     <textarea class="form-control" rows="3" id="message" name="message" required></textarea>
   </div>
-  <button type="submit" class="btn btn-custom">Submit</button>
+  <button type="button" onclick="submitForm()" class="btn btn-custom" data-toggle="modal" data-target="#successModal">Submit</button>
 </form>
-
 <!-- Modal -->
 <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="successModalLabel">Message Sent</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
