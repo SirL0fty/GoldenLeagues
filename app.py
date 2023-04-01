@@ -1,12 +1,12 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template
 
 
-app = Flask(__name__, static_url_path='/static')
+app = Flask(__name__)
 
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-        return render_template('index.html')
+        return render_template('index.html', footer='footer.html')
 
 
-app.run()
+app.run(debug=True, port=8000, host='0.0.0.0')
