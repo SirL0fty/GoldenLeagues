@@ -1,4 +1,3 @@
-Flask
 Gunicorn
 bidict==0.22.1
 certifi==2022.12.7
