@@ -27,7 +27,7 @@ a.nav-link {
 }
 
 a.nav-link:hover {
-        color: #f6bc00;
+        color: #E4BB25;
         font-weight: 500;
 }
 
@@ -117,7 +117,7 @@ div#featured-3 {
 }
 
 .btn-custom {
-        background-color: #f6bc00;
+        background-color: #E4BB25;
         color: #fff;
         font-size: 16px;
         padding: 10px 20px;
@@ -126,7 +126,7 @@ div#featured-3 {
 }
 
 .btn-custom:hover{
-        background-color: #f6bc00;
+        background-color: #E4BB25;
         color: #000000;
         font-size: 16px;
         padding: 10px 20px;
@@ -186,7 +186,7 @@ div#prices {
 }
 
 .footer-links li a:hover {
-        color: #f6bc00;
+        color: #E4BB25;
         font-weight: 500;
 }
 
@@ -197,13 +197,13 @@ a.contact-num p {
 }
 
 .heading {
-        color: #f6bc00;
+        color: #E4BB25;
         font-weight: 500;
 }
 
 a.contact-num:hover p {
 
-        color: #f6bc00;
+        color: #E4BB25;
         font-weight: 500;
         text-decoration: none !important;
 }
