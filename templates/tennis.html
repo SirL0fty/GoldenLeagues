@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block content %}
+<!--Cover Image--> 
+<img src="/static/assets/img/tennis.jpg" class="bg-image" alt="Girl Playing tennis">
+<header class="cover">
+        <div class="container-fluid">
+        <div class="cover-heading text-uppercase">Our Tennis Leagues</div>
+        <div class="cover-subheading">We have a variety of leagues to suit all abilities</div>
+        <a href="/register" class="btn btn-custom text-uppercase btn-lg">Register Now</a>
+</header>
+
+<!--Latest News Section-->
+<section class="latest-news">
+<div class="container-fluid">
+        <div class="row">
+                <div class="col-md-6">
+                <!-- Content for left column -->
+                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                <strong class="d-inline-block mb-2 text-primary">World</strong>
+                <h3 class="mb-0">Featured post</h3>
+                <div class="mb-1 text-body-secondary">Nov 12</div>
+                <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="stretched-link">Continue reading</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+                <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+        </div>
+        </div>
+        </div>
+<div class="col-md-6">
+                <!-- Content for right column -->
+                <h2>Right Column</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tempus orci id dui hendrerit, sit amet congue urna dignissim. Suspendisse vestibulum, ex vel bibendum ultrices, lacus tellus laoreet justo, ut fermentum enim lectus et tellus.</p>
+                </div>
+        </div>
+</div>
+</section>
+{% endblock %}
+
+
