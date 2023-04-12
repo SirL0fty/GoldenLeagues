@@ -127,11 +127,27 @@ div#featured-3 {
 
 .btn-custom:hover{
         background-color: #E4BB25;
-        color: #000000;
         font-size: 16px;
         padding: 10px 20px;
         margin: 10px;
 }
+
+.btn-custom-secondary {
+        background-color: #6C757D;
+        color: #fff;
+        font-size: 16px;
+        padding: 10px 20px;
+        margin: 10px;
+
+}
+
+.btn-custom-secondary:hover {
+        background-color: #6C757D;
+        font-size: 16px;
+        padding: 10px 20px;
+        margin: 10px;
+}
+
 div#prices {
         padding:0 30%;
 }
