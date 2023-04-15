@@ -1,4 +1,4 @@
-fetch(`https://api.openweathermap.org/data/2.5/weather?lat=50.877&lon=-1.328&appid=deb3810bce774c36b0d3f2a13de05b2b`)
+fetch(`https://api.openweathermap.org/data/2.5/weather?lat=50.877&lon=-1.328&appid=redacted`)
   .then((response) => response.json())
   .then((data) => {
     // Extract weather information from API response
