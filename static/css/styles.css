@@ -9,7 +9,7 @@ body {
 /* Background image styling */
 .bg-image {
         width: 100vw;
-        height: 50vh;
+        height: 100%x;
         object-fit: cover;
         position: absolute;
         top: 0;
@@ -79,11 +79,15 @@ a.nav-link:hover {
 
 /* Header styling */
 header.cover {
-        padding-top: 10rem;
-        padding-bottom: 8rem;
+        padding-top: 5rem;
+        /* Adjust the padding-top value to resize the header */
+        padding-bottom: 3rem;
+        /* Adjust the padding-bottom value to resize the header */
         text-align: center;
         color: #fff;
         height: 100%;
+        margin-bottom: 3rem;
+        /* Add margin-bottom to create space between header and featured section */
 }
 
 header.cover .cover-subheading {
@@ -110,6 +114,11 @@ header.cover .cover-heading {
 }
 
 /* Featured section styling */
+.featured-section {
+        padding: 5rem;
+        background-color: #fff;
+        font-size: 1.25rem;
+}
 
 #icon {
         width: 5em;
