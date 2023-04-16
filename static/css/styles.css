@@ -121,6 +121,7 @@ header.cover .cover-heading {
         background: no-repeat url("/static/assets/icons/tennis.png") top center;
         background-size: 5rem;
         padding-top: 6rem;
+        color: black;
 }
 
 #football-card {
