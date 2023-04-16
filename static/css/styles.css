@@ -414,13 +414,14 @@ section#about {
 .carousel-control-prev,
 .carousel-control-next {
         padding: 10px;
+}
 
-        =======#sportshowcase .carousel-inner img {
-                object-fit: cover;
-                height: 600px;
-        }
+#sportshowcase .carousel-inner img {
+        object-fit: cover;
+        height: 600px;
+}
 
-        #sportshowcase .carousel-caption {
-                bottom: 0;
-                >>>>>>>a1b514ba2b4d22aa44e04e3966f6b8068ea66673
-        }
+#sportshowcase .carousel-caption {
+        bottom: 0;
+
+}
