@@ -390,3 +390,11 @@ section#about {
 .carousel-inner {
         /*padding: 0px 25%;*/
 }
+#sportshowcase .carousel-inner img {
+        object-fit: cover;
+        height: 600px;
+}
+
+#sportshowcase .carousel-caption {
+        bottom: 0;
+}
