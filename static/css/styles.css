@@ -153,6 +153,8 @@ header.cover .cover-heading {
         font-size: 1.25rem;
         margin-bottom: 2rem;
         font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        
+
 }
 
 @media (min-width: 768px) {
@@ -369,3 +371,13 @@ a.contact-num:hover p {
 .weather-icon {
         padding-right: 50px;
 }
+div#sportshowcase {
+        background-color:#c7c7c7;
+    }
+section#about {
+        margin-bottom: 0px;
+}       
+
+.carousel-inner {
+        padding: 0px 25%;
+    }
