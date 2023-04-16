@@ -387,9 +387,6 @@ section#about {
         margin-bottom: 0px;
 }
 
-.carousel-inner {
-        /*padding: 0px 25%;*/
-}
 #sportshowcase .carousel-inner img {
         object-fit: cover;
         height: 600px;
