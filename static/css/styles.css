@@ -246,3 +246,13 @@ a.contact-num:hover p {
 .feature{
         padding-top:6rem;
 }
+div#sportshowcase {
+        background-color:#c7c7c7;
+    }
+section#about {
+        margin-bottom: 0px;
+}       
+
+.carousel-inner {
+        padding: 0px 25%;
+    }
