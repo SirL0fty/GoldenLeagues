@@ -58,9 +58,7 @@ a.nav-link:hover {
         bottom: 0;
         z-index: 1030;
         padding-top: 60px;
-        /* Adjust padding to avoid overlapping with navbar brand */
         width: 250px;
-        /* Set width of offcanvas menu */
         transition: transform 0.3s ease-in-out;
         transform: translateX(-100%);
 }
@@ -71,7 +69,6 @@ a.nav-link:hover {
 
 .navbar-toggler {
         z-index: 1031;
-        /* Ensure that the toggler is above the offcanvas menu */
 }
 
 .profile-image {
@@ -332,7 +329,6 @@ a.contact-num:hover p {
 .card {
         max-height: 350px;
         width: 100%;
-        /* Make sure the card fills the container width */
         display: flex;
         flex-direction: column;
 }
