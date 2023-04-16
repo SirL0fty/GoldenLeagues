@@ -388,10 +388,5 @@ section#about {
 }
 
 .carousel-inner {
-        padding: 0;
-}
-
-#sportshowcase {
-        background-color: transparent;
-        margin-bottom: 0;
+        /*padding: 0px 25%;*/
 }
