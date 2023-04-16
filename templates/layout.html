@@ -18,7 +18,7 @@
     {% block navbar%}
     <nav class="navbar navbar-expand-md navbar-dark fixed-top sticky-top">
       <div class="container-fluid">
-        <a class="navbar-brand" href="/">
+        <a class="navbar-brand" href="/"> offcanvas navbar-dark</a>
           <i class="fas fa-medal"></i>   MSL - Multiple Sports Complex</a
         >
         <button
@@ -68,6 +68,22 @@
       </div>
     </nav>
     {%endblock%} {% block content%}{%endblock%} {%block scripts%}
+    <!-- split drop down menu-->
+    <!-- Example split danger button -->
+<div class="btn-group">
+  <button type="button" class="btn btn-danger">Sports</button>
+  <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="sr-only">Toggle Dropdown</span>
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="#">Golf</a>
+    <a class="dropdown-item" href="#">Football</a>
+    <a class="dropdown-item" href="#">Cricket</a>
+    <a class="dropdown-item" href="#">Rugby</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="#">Separated link</a>
+  </div>
+</div>
     <!-- Core theme JS-->
     <script src="static/js/scripts.js"></script>
     <script src="static/js/calendar.js"></script>
