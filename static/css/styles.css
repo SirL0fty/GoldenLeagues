@@ -367,51 +367,5 @@ section#about {
 }
 
 .carousel-inner {
-        margin-bottom: 50px;
-}
-
-.news-section {
-        display: flex;
-        flex-direction: row;
-        gap: 0;
-        border: none;
-        border-radius: 0.25rem;
-        overflow: hidden;
-        flex-wrap: nowrap;
-        margin-bottom: 1rem;
-        box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
-        height: 350px;
-        position: relative;
-}
-
-.bd-placeholder-img {
-        height: 350px;
-}
-
-.tennis-carousel {
-        padding-top: 50px;
-        height: 350px;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        padding: 50px;
-}
-
-.tennis-carousel img {
-        filter: brightness(0.6);
-        position: relative;
-
-}
-
-.tennis-carousel-body {
-        padding: 50px;
-        position: absolute;
-        bottom: 0;
-        color: white;
-}
-
-.carousel-control-prev,
-.carousel-control-next {
-        padding: 10px;
+        /*padding: 0px 25%;*/
 }
