@@ -145,8 +145,6 @@ header.cover .cover-heading {
         font-size: 1.25rem;
         margin-bottom: 2rem;
         font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-
-
 }
 
 @media (min-width: 768px) {
@@ -189,7 +187,6 @@ header.cover .cover-heading {
 
         background-color: #fff;
         padding-bottom: 20px;
-
 }
 
 /* Map styling */
@@ -197,27 +194,6 @@ header.cover .cover-heading {
         height: 400px;
         width: 100%;
         border-radius: 1rem;
-}
-
-/* Prices section styling */
-div#prices {
-        padding: 0 30%;
-}
-
-.pricecol:hover {
-        background-color: rgba(0, 0, 0, 0.03);
-}
-
-/* Hover effect */
-.hvr-grow {
-        display: inline-block;
-        vertical-align: middle;
-        transform: translateZ(0);
-        box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-        backface-visibility: hidden;
-        -moz-osx-font-smoothing: grayscale;
-        transition-duration: 0.3s;
-        transition-property: transform;
 }
 
 /* Footer styling */
