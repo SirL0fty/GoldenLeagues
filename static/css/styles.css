@@ -175,12 +175,14 @@ header.cover .cover-heading {
 
 /* Form group styling */
 .form-group {
-        width: 50%;
+
+        padding: 10px;
 }
 
 /* Contact section styling */
 .contact-section .su {
         width: 50px;
+        padding: 20px;
 }
 
 .contact-section {
