@@ -8,7 +8,7 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?lat=50.877&lon=-1.328&app
     const humidity = data.main.humidity;
     const weatherConditionCode = data.weather[0].icon; // Get weather condition code
     const { icon } = data.weather[0];
-    const weatherIconElement = document.getElementById('weather-icon');
+    const weatherIconElement = document.getElementById('weather-icons');
 
     // Convert temperature to Celsius and round it to the nearest integer
     const temperatureInCelsius = Math.round(temperatureInKelvin - 273.15);
@@ -20,8 +20,8 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?lat=50.877&lon=-1.328&app
     document.getElementById('humidity').textContent = `Humidity: ${humidity}%`;
 
     // Update weather icon based on weather condition code
-    weatherIconElement.className = 'weather-icon'; // Reset weather icon classes
-    weatherIconElement.classList.add('wi', `wi-owm-${weatherConditionCode}`); // Add weather icon classes based on the condition
+    weatherIconElement.className = 'weather-icons'; // Reset weather icon classes
+    // weatherIconElement.classList.add('wi', `wi-owm-${weatherConditionCode}`); // Add weather icon classes based on the condition
     weatherIconElement.innerHTML = `<img src="/static/assets/weather-icons/${icon}.png">`;
   })
   .catch((error) => {
