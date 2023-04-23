@@ -17,7 +17,7 @@ def index():
         
     # return "Thank You for Your message."
         
-            return render_template('index.html', form=form)
+        return render_template('index.html', form=form)
 
 
 @app.route('/tennis')
