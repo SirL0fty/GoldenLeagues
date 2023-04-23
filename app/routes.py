@@ -22,7 +22,10 @@ def index():
 
 @app.route('/tennis')
 def tennis():
-        return render_template('tennis.html')
-# @app.route('/home')
+   # # form = ContactForm()
+    ## if form.validate_on_submit():
+   # #     return ('/success')
+    return render_template('tennis.html')
+### @app.route('/home')
 # def home():
 #     return render_template ('home.html', title='home')
