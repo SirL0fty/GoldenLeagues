@@ -7,6 +7,7 @@
         <div class="cover-heading text-uppercase"> Tennis @ MSL</div>
         <div class="cover-subheading">We have a variety of leagues to suit all abilities</div>
         <a href="/register" class="btn btn-custom text-uppercase btn-lg">Register Now</a>
+        </div>
 </header>
 
 <!-- Latest News Section -->
@@ -110,42 +111,114 @@
       <!-- Calendar -->
       <div class="mb-3 ">
         <!-- Calendar content goes here -->
-        <h2>Calendar</h2>
+<div class="card">
+  <div class="card-header">
+    <h5 class="card-title">Tennis Competitions - April 2023</h5>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Sun</th>
+            <th scope="col">Mon</th>
+            <th scope="col">Tue</th>
+            <th scope="col">Wed</th>
+            <th scope="col">Thu</th>
+            <th scope="col">Fri</th>
+            <th scope="col">Sat</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="bg-light">1</td>
+            <td class="bg-danger text-white">2</td>
+          </tr>
+          <tr>
+            <td class="bg-info text-white">3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>11</td>
+            <td>12</td>
+            <td class="bg-success text-white">13</td>
+            <td>14</td>
+            <td>15</td>
+            <td>16</td>
+          </tr>
+          <tr>
+            <td>17</td>
+            <td class="bg-warning text-white">18</td>
+            <td>19</td>
+            <td>20</td>
+            <td>21</td>
+            <td>22</td>
+            <td>23</td>
+          </tr>
+          <tr>
+            <td>24</td>
+            <td>25</td>
+            <td>26</td>
+            <td>27</td>
+            <td>28</td>
+            <td>29</td>
+            <td>30</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Upcoming Competitions:</p>
+    <ul>
+      <li><strong>April 2 - Spring Open Tournament</strong></li>
+      <li><strong>April 3 - Youth Invitational</strong></li>
+      <li><strong>April 9 - Women's Doubles Championship</strong></li>
+      <li><strong>April 18 - Men's Singles Championship</strong></li>
+    </ul>
+  </div>
+</div>
 
       </div>
 
       <!-- Weather -->
-      <div class="weather-widget mb-3">
-        <!-- Weather content goes here -->
-        <h2>Weather</h2>
-<section>
-  <div class="container py-5">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="card text-white">
-          <div class="bg-image">
-
-          </div>
-          <div class="card-img-overlay text-dark p-5">
-            <div class="d-flex align-items-center"> 
-              <div class="weather-icon mr-3" id="weather-icon">
-                <img src="/static/assets/weather-icons/unknown.png" />
+      <div class="weather mb-3">
+        <div class="search">
+          <input type="text" placeholder="Search Location" spellcheck="false" value="Southampton">
+          <button ><img src="/static/assets/weather-icons/search.png"></img></button>
+          <div class="error-message"></div>
+        </div>
+        <div>
+          <img src="/static/assets/weather-icons/rain.png" class="weather-icon">
+          <h1 class="weather-temp">20°C</h1>
+          <h2 class="weather-city">Southampton</h2>
+          <div class="weather-details">
+            <div class="weather-col">
+              <img src="/static/assets/weather-icons/humidity.png">
+              <div>
+                <p class="weather-humidity">50%</p>
+                <p>Humidity</p>
               </div>
-              <div> 
-                <h4 class="mb-0" id="city"></h4>
-                <p class="temperature my-3" id="temperature"></p>
-                <h5 id="weather-description"></h5>
-              </div>
-            </div>
-          </div>
+            </div>  
+            <div class="weather-col">
+              <img src="/static/assets/weather-icons/wind.png">
+              <div>
+                <p class="weather-wind">15km/h</p>
+                <p>Wind Speed</p>
         </div>
       </div>
-    </div>
   </div>
-</section>
-
-      </div>
-
+</div>
+</div>
       <!-- Team Rules -->
       <div class="">
         <!-- Team rules content goes here -->
@@ -228,8 +301,86 @@ All policies are also displayed in the tennis pavilion, and are also available f
       <!-- Leaderboard -->
       <div class="mb-3">
         <!-- Leaderboard content goes here -->
-        <h2>Leaderboard</h2>
-        <!-- Leaderboard content goes here -->
+        <div class="card">
+  <div class="card-header">
+    <h5 class="card-title">Tennis Leaderboard</h5>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Player</th>
+            <th>Matches Won</th>
+            <th>Matches Lost</th>
+            <th>Winning %</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>John Smith</td>
+            <td>5</td>
+            <td>1</td>
+            <td>83%</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Jane Doe</td>
+            <td>4</td>
+            <td>2</td>
+            <td>67%</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Mark Johnson</td>
+            <td>4</td>
+            <td>2</td>
+            <td>67%</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Sara Lee</td>
+            <td>3</td>
+            <td>3</td>
+            <td>50%</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>David Chen</td>
+            <td>3</td>
+            <td>3</td>
+            <td>50%</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Emily Wong</td>
+            <td>2</td>
+            <td>4</td>
+            <td>33%</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Chris Kim</td>
+            <td>2</td>
+            <td>4</td>
+            <td>33%</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>Mike Brown</td>
+            <td>1</td>
+            <td>5</td>
+            <td>17%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
       </div>
     </div>
   </div>
@@ -238,6 +389,5 @@ All policies are also displayed in the tennis pavilion, and are also available f
 {% endblock %}
 
 {% block script%}
-<script src="static/js/weather.js"></script>
 {% endblock %}
 
