@@ -23,6 +23,10 @@ def index():
 @app.route('/tennis')
 def tennis():
         return render_template('tennis.html')
+
+@app.route('/user')
+def user():
+        return render_template('user.html')
 # @app.route('/home')
 # def home():
 #     return render_template ('home.html', title='home')
