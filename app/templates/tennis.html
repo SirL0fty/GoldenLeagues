@@ -1,0 +1,393 @@
+{% extends "layout.html" %}
+{% block content %}
+<!--Cover Image--> 
+<img src="/static/assets/img/tennis.jpg" class="bg-image" alt="Girl Playing tennis">
+<header class="cover">
+        <div class="container">
+        <div class="cover-heading text-uppercase"> Tennis @ MSL</div>
+        <div class="cover-subheading">We have a variety of leagues to suit all abilities</div>
+        <a href="/register" class="btn btn-custom text-uppercase btn-lg">Register Now</a>
+        </div>
+</header>
+
+<!-- Latest News Section -->
+<section class="tennis-section">
+    <div class="row">
+      <div class=" col-md-6 p-3">
+        <div class="news-section">
+          <div class="col p-4 d-flex flex-column position-static">
+            <strong class="d-inline-block mb-2 news-tag">Sport</strong>
+            <h3 class="mb-0 news-title">Why Tennis is good for you</h3>
+            <div class="mb-1 news-date">Nov 12</div>
+            <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+          </div>
+          <div class="col-auto d-none d-lg-block">
+            <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+            <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+            <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+            <li data-bs-target="#myCarousel" data-bs-slide-to="3"></li>
+            <li data-bs-target="#myCarousel" data-bs-slide-to="4"></li>
+          </ol>
+
+<!-- Slides -->
+<div class="carousel-inner">
+  <div class="carousel-item active">
+    <div class="tennis-carousel">
+      <img src="/static/assets/img/ja.jpg" alt="John Adams">
+      <div class="tennis-carousel-body">
+        <h5 class="tennis-carousel-title">John Adams</h5>
+        <p class="tennis-carousel-text">Coach John Adams is a highly experienced tennis coach with over 15 years of coaching expertise in the UK. </p>
+        <p class="tennis-carousel-text"><small class="text-warning">Read More</small></p>
+      </div>
+    </div>
+  </div>
+  <div class="carousel-item">
+    <div class="tennis-carousel" style="position: relative;">
+      <img src="/static/assets/img/mc.jpg" alt="Michael Chen">
+      <div class="tennis-carousel-body" style="position: absolute; bottom: 0; width: 100%; color: white;">
+        <h5 class="tennis-carousel-title">Michael Chen</h5>
+        <p class="tennis-carousel-text">Coach Michael Chen is a former ATP professional tennis player turned highly sought-after coach based in the UK.  </p>
+        <p class="tennis-carousel-text"><small class="text-warning">Read More</small></p>
+      </div>
+    </div>
+  </div>
+  <div class="carousel-item">
+    <div class="tennis-carousel" style="position: relative;">
+      <img src="/static/assets/img/sl.jpg" alt="Samantha Lee">
+      <div class="tennis-carousel-body" style="position: absolute; bottom: 0; width: 100%; color: white;">
+        <h5 class="tennis-carousel-title">Samantha Lee</h5>
+        <p class="tennis-carousel-text">Coach Samantha Lee is a dynamic tennis coach known for her innovative coaching methods and infectious enthusiasm for the sport in the UK.  </p>
+        <p class="tennis-carousel-text"><small class="text-warning">Read more</small></p>
+      </div>
+    </div>
+  </div>
+    <div class="carousel-item">
+    <div class="tennis-carousel" style="position: relative;">
+      <img src="/static/assets/img/ms.jpg"  alt="Samantha Lee">
+      <div class="tennis-carousel-body" style="position: absolute; bottom: 0; width: 100%; color: white;">
+        <h5 class="tennis-carousel-title">Maria Sanchez</h5>
+        <p class="tennis-carousel-text">Coach Samantha Lee is a dynamic tennis coach known for her innovative coaching methods and infectious enthusiasm for the sport in the UK.  </p></p>
+        <p class="tennis-carousel-text"><small class="text-warning">Read more</small></p>
+      </div>
+    </div>
+  </div>
+    <div class="carousel-item">
+    <div class="tennis-carousel" style="position: relative;">
+      <img src="/static/assets/img/dw.jpg" alt="Samantha Lee">
+      <div class="tennis-carousel-body" style="position: absolute; bottom: 0; width: 100%; color: white;">
+        <h5 class="tennis-carousel-title">David Wilson</h5>
+        <p class="tennis-carousel-text">Coach David Wilson is a seasoned tennis coach based in the UK with over 20 years of coaching experience at various levels.</p>
+        <p class="tennis-carousel-text"><small class="text-warning">Read more</small></p>
+      </div>
+    </div>
+  </div>
+<!-- Controls -->
+  <a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Leaderboard -->
+<div class="leaderboard-container p-5">
+  <div class="row">
+    <div class="col-lg-4">
+      <!-- Calendar -->
+      <div class="mb-3 ">
+        <!-- Calendar content goes here -->
+<div class="card">
+  <div class="card-header">
+    <h5 class="card-title">Tennis Competitions - April 2023</h5>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Sun</th>
+            <th scope="col">Mon</th>
+            <th scope="col">Tue</th>
+            <th scope="col">Wed</th>
+            <th scope="col">Thu</th>
+            <th scope="col">Fri</th>
+            <th scope="col">Sat</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="bg-light">1</td>
+            <td class="bg-danger text-white">2</td>
+          </tr>
+          <tr>
+            <td class="bg-info text-white">3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>11</td>
+            <td>12</td>
+            <td class="bg-success text-white">13</td>
+            <td>14</td>
+            <td>15</td>
+            <td>16</td>
+          </tr>
+          <tr>
+            <td>17</td>
+            <td class="bg-warning text-white">18</td>
+            <td>19</td>
+            <td>20</td>
+            <td>21</td>
+            <td>22</td>
+            <td>23</td>
+          </tr>
+          <tr>
+            <td>24</td>
+            <td>25</td>
+            <td>26</td>
+            <td>27</td>
+            <td>28</td>
+            <td>29</td>
+            <td>30</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Upcoming Competitions:</p>
+    <ul>
+      <li><strong>April 2 - Spring Open Tournament</strong></li>
+      <li><strong>April 3 - Youth Invitational</strong></li>
+      <li><strong>April 9 - Women's Doubles Championship</strong></li>
+      <li><strong>April 18 - Men's Singles Championship</strong></li>
+    </ul>
+  </div>
+</div>
+
+      </div>
+
+      <!-- Weather -->
+      <div class="weather mb-3">
+        <div class="search">
+          <input type="text" placeholder="Search Location" spellcheck="false" value="Southampton">
+          <button ><img src="/static/assets/weather-icons/search.png"></img></button>
+          <div class="error-message"></div>
+        </div>
+        <div>
+          <img src="/static/assets/weather-icons/rain.png" class="weather-icon">
+          <h1 class="weather-temp">20°C</h1>
+          <h2 class="weather-city">Southampton</h2>
+          <div class="weather-details">
+            <div class="weather-col">
+              <img src="/static/assets/weather-icons/humidity.png">
+              <div>
+                <p class="weather-humidity">50%</p>
+                <p>Humidity</p>
+              </div>
+            </div>  
+            <div class="weather-col">
+              <img src="/static/assets/weather-icons/wind.png">
+              <div>
+                <p class="weather-wind">15km/h</p>
+                <p>Wind Speed</p>
+        </div>
+      </div>
+  </div>
+</div>
+</div>
+      <!-- Team Rules -->
+      <div class="">
+        <!-- Team rules content goes here -->
+        <h2>Tennis Policy</h2>
+      <ol class="list-group list-group-numbered">
+  <li class="list-group-item d-flex justify-content-between align-items-start">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold">Tennis at MSL</div>
+      MSL has a total of 10 tennis courts - 4 hard courts available all year; 6 grass courts available May to September
+    </div>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-start">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold">Booking of courts</div>
+      Using thr courts is FREE to all members but all courts must still be booked online by clicking here.
+      Club events, tournaments and competitions and coaching are all pre-booked. Hard courts (Nos 9 & 10) are avilable throughout the year
+      and ten grass courts (Nos 1 & 8) weather permitting May to September.
+    </div>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-start">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold">Visitors</div>
+      Friends and Family of memebers are always welcome at £5 per session per Adult and £3 per session as junior (max 5 pe year) payable in shop or to any Committee Member, or staff member.
+    </div>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-start">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold">Pay & Play</div>
+      Non Memebers are welcome to book and play on the day. Court Sessions last 1/5 hours and cost £20 for 4 adults, £16 for familt of 2 Adults and 2 Children, £12 for 2 players and £3 each for juniors. Please book and pay at the shop on arrival. 
+    </div>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-start">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold">Mix-In Sessions</div>
+      Every Tuesdays and Thursday mornings all year 10.00am - 12.00pm (mid-July to end August 14.00 - 16:00pm).
+      Wednesday evenings May to September from 5.00pm.
+      all members and visitors are welcome.
+    </div>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-start">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold">Clothing</div>
+    Recognised tennis shoes and appropriate clothing is expected to be worn on the Courts. Please use tennis changing rooms located to the right of the courts. 
+    </div>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-start">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold">Events, Competitions and Tournaments</div>
+      A comprehensive programme of events is organised by the Tennis Committee. Notices will be posted on the tennis section notice board along with entry lists and other details.
+    </div>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-start">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold">Holiday Pragramme</div>
+      Junior, Men's, Ladies and mixed doubles tournaments are held throughout July and August. mini/tennis coaching ages (5- 11) sessions are held every morning.
+    </div>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-start">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold">Coaching</div>
+      Individual and group coaching is available for adults and juniors please contact De-ann Stewart-Leigh
+      For general advice and furthur details please ocntact the shop
+    </div>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-start">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold">Welfare Policy</div>
+      MSL Tennis is committed to prioritising the well-being of all children and adults, promoting safeguarding in our club at all times, including all programmes and events that we run.  In addition we are proud to have a Diversity and Inclusion Policy that demonstrates our commitment to making tennis diverse and inclusive for all.  We are committed to ensuring our practices reflect statutory responsibilities, government guidance and complies with best practice and LTA requirements.
+A copy of the club’s full Safeguarding Policy can be read here
+The Diversity and Inclusion Policy can be read here.
+The Whistleblowing Policy can be read here.
+All policies are also displayed in the tennis pavilion, and are also available from the club office and the MSL Welfare Officer
+    </div>
+  </li>
+</ol>
+      </div>
+    </div>
+
+    <div class="col-lg-8">
+      <!-- Leaderboard -->
+      <div class="mb-3">
+        <!-- Leaderboard content goes here -->
+        <div class="card">
+  <div class="card-header">
+    <h5 class="card-title">Tennis Leaderboard</h5>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Player</th>
+            <th>Matches Won</th>
+            <th>Matches Lost</th>
+            <th>Winning %</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>John Smith</td>
+            <td>5</td>
+            <td>1</td>
+            <td>83%</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Jane Doe</td>
+            <td>4</td>
+            <td>2</td>
+            <td>67%</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Mark Johnson</td>
+            <td>4</td>
+            <td>2</td>
+            <td>67%</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Sara Lee</td>
+            <td>3</td>
+            <td>3</td>
+            <td>50%</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>David Chen</td>
+            <td>3</td>
+            <td>3</td>
+            <td>50%</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Emily Wong</td>
+            <td>2</td>
+            <td>4</td>
+            <td>33%</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Chris Kim</td>
+            <td>2</td>
+            <td>4</td>
+            <td>33%</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>Mike Brown</td>
+            <td>1</td>
+            <td>5</td>
+            <td>17%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block script%}
+{% endblock %}
+
