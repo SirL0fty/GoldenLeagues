@@ -15,4 +15,3 @@ SQLAlchemy==2.0.10
 Werkzeug==2.2.3
 WTForms==3.0.1
 pymysql==1.0.2
-```
