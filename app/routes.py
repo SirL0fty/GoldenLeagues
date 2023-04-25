@@ -1,28 +1,17 @@
 #!/usr/bin/python
 from flask import flash, render_template, request, redirect, abort, session
-from app import app, db
-from app.models import User, League
+from app import app
+from app.models import User, db
+from app.models import User
 from werkzeug.datastructures import MultiDict
 from app.forms import UserForm
-# from app.forms import ContactForm
 
 USER_FORM_DATA = "user_form"
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    # form = ContactForm()
 
-    # if request.method == 'POST' and form.validate():
-    #     name = form.name.data
-    #     email = form.email.data
-    #     message = form.message.data
-
-    #     # Do something with the data
-
-    #     return render_template('index.html', form=form)
-
-    # return render_template('index.html', form=form)
-    return render_template('index.html')
+        return render_template('index.html')
 
 @app.route('/register', methods=['POST'])
 def register():
