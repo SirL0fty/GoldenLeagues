@@ -13,28 +13,29 @@ def index():
 
         return render_template('index.html')
 
-@app.route('/register', methods=['POST'])
+@app.route('/register', methods=['GET', 'POST'])
 def register():
-        user_form = UserForm()
+    user_form = UserForm()
+
+    if request.method == 'POST' and user_form.validate():
+        user = User.query.filter_by(email=user_form.email.data).first()
+        if user:
+            flash(f"{user.email } - Email already exists. Please log in.")
+            return redirect('/login')
         
-        if user_form.validate():
-                user = User()
-                user.name = user_form.name.data
-                user.email = user_form.email.data
-                user.password = user_form.password.data
-                
-                db.session.add(user)
-                try:
-                    db.session.commit()
-                except:
-                    flash(f"{user.email } - Email already exists")
-                    return redirect('/user')
-                
-                flash(f'{user.name} successfully added')
-                return redirect('/user')
+        new_user = User(
+            name=user_form.name.data,
+            email=user_form.email.data,
+            password=user_form.password.data
+        )
+
+        db.session.add(new_user)
+        db.session.commit()
         
-        session[USER_FORM_DATA] = request.form
+        flash(f"{new_user.name} successfully registered.")
         return redirect('/user')
+
+    return render_template('register.html', form=user_form)
 
 
 @app.route('/tennis')
@@ -43,7 +44,8 @@ def tennis():
 
 @app.route('/user')
 def user():
+        
+        
+        #add check for the session
+        
         return render_template('user.html')
-# @app.route('/home')
-# def home():
-#     return render_template ('home.html', title='home')

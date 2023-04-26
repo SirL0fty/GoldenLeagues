@@ -5,3 +5,4 @@ USERS = [
                 {name: 'Sam', email: 'samuelaaronparker@gmail.com', password: 'password123'},
                 {name: 'Kat', email: 'katrinadematos3@gmail.com', password: 'password123'},
 ]
+
