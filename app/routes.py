@@ -36,9 +36,9 @@ def register():
                 
                 db.session.add(user)
                 try:
-                db.session.commit()
+                        db.session.commit()
                 except:
-                flash(f"{user.email } - Email already exists")
+                        flash(f"{user.email } - Email already exists")
                 return redirect('/user')
                 
                 flash(f'{user.name} successfully added')
