@@ -47,7 +47,6 @@ def register():
         session[USER_FORM_DATA] = request.form
         return redirect('/user')
 
-
 @app.route('/tennis')
 def tennis():
         return render_template('tennis.html')
