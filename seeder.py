@@ -1,4 +1,4 @@
-from app import app, db, User
+from application import app, db, User
 
 USERS = [
                 {name: 'Mike', email: 'mikecrane@me.com', password: 'password123'},

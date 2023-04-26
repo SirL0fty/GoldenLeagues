@@ -1,12 +1,13 @@
 #!/usr/bin/python
 from flask import flash, render_template, request, redirect, abort, session
-from app import app
-from app.models import User, db
-from app.models import User
+from application import app, db
+from application.models import User
 from werkzeug.datastructures import MultiDict
-from app.forms import UserForm
+from application.forms import UserForm
+from sqlalchemy.sql.functions import now
 
 USER_FORM_DATA = "user_form"
+LOGGED_IN_USER = 'user_id'
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -33,6 +34,7 @@ def register():
         db.session.commit()
         
         flash(f"{new_user.name} successfully registered.")
+        session[USER_FORM_DATA] = request.form
         return redirect('/user')
 
     return render_template('register.html', form=user_form)
