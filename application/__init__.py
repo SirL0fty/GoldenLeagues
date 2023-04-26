@@ -6,7 +6,6 @@ from flask_bcrypt import Bcrypt
 from dotenv import load_dotenv
 
 from application.database import db
-# from app.models import *
 
 load_dotenv()
 
@@ -24,4 +23,4 @@ app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
 db.init_app(app)
 bcrypt = Bcrypt(app)
 
-from application import routes 
+from application import routes

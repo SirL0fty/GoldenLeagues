@@ -9,10 +9,12 @@ from sqlalchemy.sql.functions import now
 REGISTER_FORM_DATA = "register_form"
 LOGGED_IN_USER = 'user_id'
 
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
 
-        return render_template('index.html')
+    return render_template('index.html')
+
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -23,7 +25,7 @@ def register():
         if user:
             flash(f"{user.email } - Email already exists. Please log in.")
             return redirect('/login')
-        
+
         new_user = User(
             name=register_form.name.data,
             email=register_form.email.data,
@@ -32,7 +34,7 @@ def register():
 
         db.session.add(new_user)
         db.session.commit()
-        
+
         flash(f"{new_user.name} successfully registered.")
         session[REGISTER_FORM_DATA] = request.form
         return redirect('/user')
@@ -42,12 +44,12 @@ def register():
 
 @app.route('/tennis')
 def tennis():
-        return render_template('tennis.html')
+    return render_template('tennis.html')
+
 
 @app.route('/user')
 def user():
-        
-        
-        #add check for the session
-        
-        return render_template('user.html')
+
+    # add check for the session
+
+    return render_template('user.html')
