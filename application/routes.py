@@ -3,6 +3,7 @@ from flask import flash, render_template, request, redirect, session
 from application import app, db
 from application.models import User
 from application.forms import RegisterForm, LoginForm
+
 from sqlalchemy.sql.functions import now
 
 REGISTER_FORM_DATA = "register_form"
