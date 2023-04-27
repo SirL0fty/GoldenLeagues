@@ -1,46 +1,28 @@
 {
   "tabWidth": 4,
-  "useTabs": false,
-  "printWidth": 80,
+  "printWidth": 120,
+  "semi": false,
   "singleQuote": true,
-  "trailingComma": "es5",
-  "jsxBracketSameLine": false,
-  "htmlWhitespaceSensitivity": "css",
-  "cssIndentation": "tab",
-  "embeddedLanguageFormatting": "auto",
-  "endOfLine": "auto",
+  "arrowParens": "always",
+  "trailingComma": "all",
   "overrides": [
     {
-      "files": "*.html",
+      "files": ["*.css"],
       "options": {
-        "tabWidth": 2,
-        "useTabs": false,
-        "printWidth": 120,
-        "htmlWhitespaceSensitivity": "ignore"
+        "tabWidth": 2
       }
     },
     {
-      "files": "*.css",
+      "files": ["*.html"],
       "options": {
-        "tabWidth": 2,
-        "useTabs": false,
-        "printWidth": 120
+        "tabWidth": 2
       }
     },
     {
-      "files": "*.js",
+      "files": ["*.py"],
       "options": {
-        "tabWidth": 2,
-        "useTabs": false,
-        "printWidth": 120
-      }
-    },
-    {
-      "files": "*.py",
-      "options": {
-        "tabWidth": 4,
-        "useTabs": false,
-        "printWidth": 88
+        "singleQuote": false,
+        "trailingComma": "none"
       }
     }
   ]

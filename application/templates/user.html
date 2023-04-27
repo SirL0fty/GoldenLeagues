@@ -1,10 +1,11 @@
 {% extends "layout.html" %}
 {% block content %}
 <!--Cover Image--> 
-<img src="/static/assets/img/tennis.jpg" class="bg-image" alt="Girl Playing tennis">
+<img src="/static/assets/img/golf-bg.jpg" class="bg-image" alt="A golf course">
 <header class="cover">
         <div class="container">
-        <div class="cover-heading text-uppercase">John Doe</div>
+        <div class="cover-heading text-uppercase">{{ username }}</div>
+        </div>
 </header>
 
 <!-- Latest News Section -->
@@ -22,7 +23,7 @@
                 <strong>Email:</strong>
               </div>
               <div class="col-md-9">
-                <span>johndoe@example.com</span>
+                <span>{{ email }}</span>
                 <button class="btn btn-link">Edit</button>
               </div>
             </div>
@@ -31,7 +32,7 @@
                 <strong>Name:</strong>
               </div>
               <div class="col-md-9">
-                <span>John Doe</span>
+                <span>{{ username }}</span>
                 <button class="btn btn-link">Edit</button>
               </div>
             </div>
@@ -40,7 +41,7 @@
                 <strong>Address:</strong>
               </div>
               <div class="col-md-9">
-                <span>123 Fake Street<br>Anytown, UK PO19 1AB</span>
+                <span>{{ address }}</span>
                 <button class="btn btn-link">Edit</button>
               </div>
             </div>
@@ -49,7 +50,7 @@
                 <strong>Phone:</strong>
               </div>
               <div class="col-md-9">
-                <span>0771234560</span>
+                <span>{{ phone }}</span>
                 <button class="btn btn-link">Edit</button>
               </div>
             </div>
@@ -58,7 +59,7 @@
                   <strong>Club:</strong>
                 </div>
                 <div class="col-md-9">
-                  <span>Bognor Ball Handlers</span>
+                  <span>{{ club }}</span>
                   <button class="btn btn-link">Edit</button>
                 </div>
               </div>

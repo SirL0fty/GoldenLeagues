@@ -58,12 +58,21 @@
             <li class="nav-item">
               <a class="nav-link" href="#contact">Contact</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#register">Register</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#login">Login</a>
-            </li>
+            {% if current_user %}
+        <li class="nav-item">
+          <a class="nav-link" href="/user">{{ current_user.name }}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/logout">Logout</a>
+        </li>
+        {% else %}
+        <li class="nav-item">
+          <a class="nav-link" href="/register">Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/login">Login</a>
+        </li>
+        {% endif %}
             <li class="nav-item">
               <a class="nav-link-profile" href="#contact">
                 <img src="/static/assets/img/user.png" alt="Profile Image" class="profile-image" />

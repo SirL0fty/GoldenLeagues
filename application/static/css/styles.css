@@ -43,6 +43,16 @@ a.nav-link:hover {
         font-weight: 500;
 }
 
+a {
+        color: #E4BB25;
+        font-weight: 500;
+}
+
+a:hover {
+        color: #ffffff;
+        font-weight: 500;
+}
+
 .navbar-scrolled {
         position: sticky;
         width: 100%;
@@ -485,4 +495,9 @@ section#about {
 .weather-wind {
         font-size: 20px;
         margin-top: -6px;
+}
+
+.form-control::placeholder {
+        color: #dedede;
+        /* or any other muted color you want to use */
 }
