@@ -13,4 +13,4 @@ python-dotenv
 SQLAlchemy==2.0.10
 WTForms==3.0.1
 pymysql==1.0.2
-flask-bcrypt==0.7.1
+flask-bcrypt
