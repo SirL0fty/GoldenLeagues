@@ -15,4 +15,3 @@ Werkzeug==2.2.3
 WTForms==3.0.1
 pymysql==1.0.2
 flask-bcrypt==0.7.1
-```
