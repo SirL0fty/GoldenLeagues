@@ -21,6 +21,24 @@
               {% endfor %}
             </div>
             <div class="mb-3">
+              {{ register_form.address(class_='form-control', placeholder='Address') }} {% for error in
+              register_form.address.errors %}
+              <div class="invalid-feedback d-block">{{ error }}</div>
+              {% endfor %}
+            </div>
+            <div class="mb-3">
+              {{ register_form.phone(class_='form-control', placeholder='Phone') }} {% for error in
+              register_form.phone.errors %}
+              <div class="invalid-feedback d-block">{{ error }}</div>
+              {% endfor %}
+            </div>
+            <div class="mb-3">
+              {{ register_form.club(class_='form-control', placeholder='Club') }} {% for error in
+              register_form.club.errors %}
+              <div class="invalid-feedback d-block">{{ error }}</div>
+              {% endfor %}
+            </div>
+            <div class="mb-3">
               {{ register_form.password(class_='form-control', placeholder='Password') }} {% for error in
               register_form.password.errors %}
               <div class="invalid-feedback d-block">{{ error }}</div>

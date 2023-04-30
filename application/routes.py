@@ -79,6 +79,7 @@ def register():
 
         flash(f"{new_user.name} successfully registered.")
         session[REGISTER_FORM_DATA] = request.form
+        session[LOGGED_IN_USER] = new_user.id
         return redirect("/user")
 
     return render_template("register.html", register_form=register_form)

@@ -16,7 +16,6 @@ class User(db.Model):
         db.DateTime, server_default=db.func.now(), server_onupdate=db.func.now()
     )
 
-    # league = db.relationship('League', back_populates='owner')
     @hybrid_property
     def password(self):
         return self._password
