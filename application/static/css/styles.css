@@ -498,11 +498,12 @@ section#about {
 }
 
 .form-control::placeholder {
-        color: #dedede;
+        color: #767676;
         /* or any other muted color you want to use */
 }
+
 .card {
-        color:#555;
+        color: #555;
         width: 100%;
         max-width: none;
 }
