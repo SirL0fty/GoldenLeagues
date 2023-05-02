@@ -11,6 +11,13 @@
 </header>
 <!-- Latest News Section -->
 <section class="tennis-section">
+    <!-- Weather -->
+    <div class="weather mb-3">
+      <a class="weatherwidget-io" href="https://forecast7.com/en/50d91n1d40/southampton/" data-label_1="SOUTHAMPTON" data-label_2="WEATHER" data-icons="Climacons" data-days="5" data-theme="clear" data-basecolor="#f1f1f1" >SOUTHAMPTON WEATHER</a>
+      <script>
+        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+      </script>
+    </div>
     <div class="row">
       <div class=" col-md-6 p-3">
         <div class="news-section">
@@ -237,175 +244,141 @@
 </div>
 </div>
     </div>
-  </div>
-</div>
-      <!-- Weather -->
-      <div class="weather mb-3">
-        <div class="search">
-          <input type="text" placeholder="Search Location" spellcheck="false" value="Southampton">
-          <button ><img src="/static/assets/weather-icons/search.png"></img></button>
-          <div class="error-message"></div>
-        </div>
-        <div>
-          <img src="/static/assets/weather-icons/rain.png" class="weather-icon">
-          <h1 class="weather-temp">20°C</h1>
-          <h2 class="weather-city">Southampton</h2>
-          <div class="weather-details">
-            <div class="weather-col">
-              <img src="/static/assets/weather-icons/humidity.png">
-              <div>
-                <p class="weather-humidity">50%</p>
-                <p>Humidity</p>
-              </div>
-            </div>  
-            <div class="weather-col">
-              <img src="/static/assets/weather-icons/wind.png">
-              <div>
-                <p class="weather-wind">15km/h</p>
-                <p>Wind Speed</p>
-        </div>
+  <!-- Team Rules -->
+  <div class="container-fluid crules">
+    <!-- Team rules content goes here -->
+    <div class="card">
+      <div class="card-header">
+        <h5 class="card-title">Club Rules</h5>
       </div>
-  </div>
-</div>
-</div>
-      <!-- Team Rules -->
-      <div class="m-3">
-        <!-- Team rules content goes here -->
-        <div class="card">
-          <div class="card-header">
-            <h5 class="card-title">Club Rules</h5>
+      <div class="card-body">
+
+      </div>
+          
+      <div class="accordion" id="accordionPanelsStayOpenExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+              <strong>Booking of courts</strong>
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+            <div class="accordion-body">
+              Using the courts is FREE to all members but all courts must still be booked online by clicking here.
+                Club events, tournaments and competitions and coaching are all pre-booked. Hard courts (Nos 9 & 10) are avilable throughout the year
+                and ten grass courts (Nos 1 & 8) weather permitting May to September.
+            </div>
           </div>
-          <div class="card-body">
-  
           </div>
-              
-          <div class="accordion" id="accordionPanelsStayOpenExample">
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                  <strong>Booking of courts</strong>
-                </button>
-              </h2>
-              <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
-                <div class="accordion-body">
-                  Using the courts is FREE to all members but all courts must still be booked online by clicking here.
-                    Club events, tournaments and competitions and coaching are all pre-booked. Hard courts (Nos 9 & 10) are avilable throughout the year
-                    and ten grass courts (Nos 1 & 8) weather permitting May to September.
-                </div>
-              </div>
-              </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-                  <strong> Visitors</strong>
-                </button>
-              </h2>
-              <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
-                <div class="accordion-body">
-                  Friends and Family of memebers are always welcome at £5 per session per Adult and £3 per session as junior (max 5 pe year) payable in shop or to any Committee Member, or staff member.
-                </div>
-              </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+              <strong> Visitors</strong>
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              Friends and Family of memebers are always welcome at £5 per session per Adult and £3 per session as junior (max 5 pe year) payable in shop or to any Committee Member, or staff member.
             </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-                  <strong>Pay & Play</strong>
-                </button>
-              </h2>
-              <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
-                <div class="accordion-body">
-                  Non Memebers are welcome to book and play on the day. Court Sessions last 1/5 hours and cost £20 for 4 adults, £16 for familt of 2 Adults and 2 Children, £12 for 2 players and £3 each for juniors. Please book and pay at the shop on arrival.
-                </div>
-              </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+              <strong>Pay & Play</strong>
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              Non Memebers are welcome to book and play on the day. Court Sessions last 1/5 hours and cost £20 for 4 adults, £16 for familt of 2 Adults and 2 Children, £12 for 2 players and £3 each for juniors. Please book and pay at the shop on arrival.
             </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
-                  <strong>Mix-In Sessions</strong>
-                </button>
-              </h2>
-              <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse">
-                <div class="accordion-body">
-                  Every Tuesdays and Thursday mornings all year 10.00am - 12.00pm (mid-July to end August 14.00 - 16:00pm).
-                  Wednesday evenings May to September from 5.00pm.
-                  all members and visitors are welcome.
-                </div>
-              </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+              <strong>Mix-In Sessions</strong>
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              Every Tuesdays and Thursday mornings all year 10.00am - 12.00pm (mid-July to end August 14.00 - 16:00pm).
+              Wednesday evenings May to September from 5.00pm.
+              all members and visitors are welcome.
             </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false" aria-controls="panelsStayOpen-collapseFive">
-                  <strong>Clothing</strong>
-                </button>
-              </h2>
-              <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse">
-                <div class="accordion-body">
-                  Recognised tennis shoes and appropriate clothing is expected to be worn on the Courts. Please use tennis changing rooms located to the right of the courts.
-                </div>
-              </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false" aria-controls="panelsStayOpen-collapseFive">
+              <strong>Clothing</strong>
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              Recognised tennis shoes and appropriate clothing is expected to be worn on the Courts. Please use tennis changing rooms located to the right of the courts.
             </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false" aria-controls="panelsStayOpen-collapseSix">
-                  <strong>Events, Competitions and Tournaments</strong>
-                </button>
-              </h2>
-              <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse">
-                <div class="accordion-body">
-                  A comprehensive programme of events is organised by the Tennis Committee. Notices will be posted on the tennis section notice board along with entry lists and other details.
-                </div>
-              </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false" aria-controls="panelsStayOpen-collapseSix">
+              <strong>Events, Competitions and Tournaments</strong>
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              A comprehensive programme of events is organised by the Tennis Committee. Notices will be posted on the tennis section notice board along with entry lists and other details.
             </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSeven" aria-expanded="false" aria-controls="panelsStayOpen-collapseSeven">
-                  <strong>Holiday Pragramme</strong>
-                </button>
-              </h2>
-              <div id="panelsStayOpen-collapseSeven" class="accordion-collapse collapse">
-                <div class="accordion-body">
-                  Junior, Men's, Ladies and mixed doubles tournaments are held throughout July and August. mini/tennis coaching ages (5- 11) sessions are held every morning.
-                </div>
-              </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSeven" aria-expanded="false" aria-controls="panelsStayOpen-collapseSeven">
+              <strong>Holiday Pragramme</strong>
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseSeven" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              Junior, Men's, Ladies and mixed doubles tournaments are held throughout July and August. mini/tennis coaching ages (5- 11) sessions are held every morning.
             </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseEight" aria-expanded="false" aria-controls="panelsStayOpen-collapseEight">
-                  <strong>Coaching</strong>
-                </button>
-              </h2>
-              <div id="panelsStayOpen-collapseEight" class="accordion-collapse collapse">
-                <div class="accordion-body">
-                  Individual and group coaching is available for adults and juniors please contact De-ann Stewart-Leigh
-                  For general advice and furthur details please ocntact the shop
-                </div>
-              </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseEight" aria-expanded="false" aria-controls="panelsStayOpen-collapseEight">
+              <strong>Coaching</strong>
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseEight" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              Individual and group coaching is available for adults and juniors please contact De-ann Stewart-Leigh
+              For general advice and furthur details please ocntact the shop
             </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseNine" aria-expanded="false" aria-controls="panelsStayOpen-collapseNine">
-                  <strong>Welfare Policy</strong>
-                </button>
-              </h2>
-              <div id="panelsStayOpen-collapseNine" class="accordion-collapse collapse">
-                <div class="accordion-body">
-                  <strong> MSL Tennis is committed to prioritising the well-being of all children and adults, promoting safeguarding in our club at all times, including all programmes and events that we run.  In addition we are proud to have a Diversity and Inclusion Policy that demonstrates our commitment to making tennis diverse and inclusive for all.  We are committed to ensuring our practices reflect statutory responsibilities, government guidance and complies with best practice and LTA requirements.
-                    A copy of the club’s full Safeguarding Policy can be read here
-                    The Diversity and Inclusion Policy can be read here.
-                    The Whistleblowing Policy can be read here.
-                    All policies are also displayed in the tennis pavilion, and are also available from the club office and the MSL Welfare Officer
-                </div>
-              </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseNine" aria-expanded="false" aria-controls="panelsStayOpen-collapseNine">
+              <strong>Welfare Policy</strong>
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseNine" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <strong> MSL Tennis is committed to prioritising the well-being of all children and adults, promoting safeguarding in our club at all times, including all programmes and events that we run.  In addition we are proud to have a Diversity and Inclusion Policy that demonstrates our commitment to making tennis diverse and inclusive for all.  We are committed to ensuring our practices reflect statutory responsibilities, government guidance and complies with best practice and LTA requirements.
+                A copy of the club’s full Safeguarding Policy can be read here
+                The Diversity and Inclusion Policy can be read here.
+                The Whistleblowing Policy can be read here.
+                All policies are also displayed in the tennis pavilion, and are also available from the club office and the MSL Welfare Officer
             </div>
+          </div>
         </div>
     </div>
-  </div>
-  </div>
-  
-  
-            
-          </div>
-
+</div>
+</div>
+</div>
+</div>
+      
 {% endblock %}
 
 {% block script%}
