@@ -100,8 +100,12 @@ def tennis():
 
 @app.route("/user")
 def user():
-    user = User.query.filter_by(id=session.get(LOGGED_IN_USER)).first()
     current_user = get_current_user()
+
+    if not current_user:
+        flash("Please login.")
+        return redirect("/login")
+    user = User.query.filter_by(id=session.get(LOGGED_IN_USER)).first()
     return render_template(
         "user.html",
         email=user.email if user else None,

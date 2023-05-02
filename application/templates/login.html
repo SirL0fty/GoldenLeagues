@@ -19,6 +19,15 @@
               login_form.password.errors %}
               <div class="invalid-feedback d-block">{{ error }}</div>
               {% endfor %}
+              {% with messages = get_flashed_messages() %}
+              {% if messages %}
+                <ul class="flashmsg">
+                {% for message in messages %}
+                  <li>{{ message }}</li>
+                  {% endfor %}
+                  </ul>
+                {% endif %}
+              {% endwith %}
             </div>
             <button type="submit" class="btn btn-warning me-2">Login</button>
               Don't have an account?
