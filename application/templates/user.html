@@ -8,14 +8,13 @@
         </div>
 </header>
 
-<!-- Latest News Section -->
-<section class="tennis-section">
+<!-- Users Section -->
+<section class="user-section">
     <div class="container">
         <h1 class="text-center my-5">My Account</h1>
         <div class="row">
           <div class="col-md-4">
             <img src="https://via.placeholder.com/200x200" class="img-fluid rounded-circle mb-3" alt="Profile Picture">
-            <button class="btn btn-primary btn-block">Change Profile Picture</button>
           </div>
           <div class="col-md-8">
             <div class="row mb-3">
@@ -24,7 +23,6 @@
               </div>
               <div class="col-md-9">
                 <span>{{ email }}</span>
-                <button class="btn btn-link">Edit</button>
               </div>
             </div>
             <div class="row mb-3">
@@ -33,7 +31,6 @@
               </div>
               <div class="col-md-9">
                 <span>{{ username }}</span>
-                <button class="btn btn-link">Edit</button>
               </div>
             </div>
             <div class="row mb-3">
@@ -42,7 +39,6 @@
               </div>
               <div class="col-md-9">
                 <span>{{ address }}</span>
-                <button class="btn btn-link">Edit</button>
               </div>
             </div>
             <div class="row mb-3">
@@ -51,7 +47,6 @@
               </div>
               <div class="col-md-9">
                 <span>{{ phone }}</span>
-                <button class="btn btn-link">Edit</button>
               </div>
             </div>
             <div class="row mb-3">
@@ -60,11 +55,12 @@
                 </div>
                 <div class="col-md-9">
                   <span>{{ club }}</span>
-                  <button class="btn btn-link">Edit</button>
                 </div>
               </div>
           </div>
         </div>
+
+        <a href="{{ url_for('edit_user') }}" class="btn btn-custom m-3 float-end">Edit Profile</a>
         <div class="card">
             <div class="card-header">
               Upcoming Tennis Competitions

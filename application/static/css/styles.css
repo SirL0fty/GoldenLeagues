@@ -518,4 +518,10 @@ ul.flashmsg {
         border-radius: 5px;
         margin-top: 10px;
         padding: 5px 5px 5px 10px;
-    }
+}
+
+.user-section {
+        padding: 3rem;
+        background-color: #fff;
+        font-size: 1.25rem;
+}

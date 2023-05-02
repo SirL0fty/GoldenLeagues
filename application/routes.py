@@ -105,9 +105,41 @@ def user():
     if not current_user:
         flash("Please login.")
         return redirect("/login")
+
     user = User.query.filter_by(id=session.get(LOGGED_IN_USER)).first()
+
     return render_template(
         "user.html",
+        email=user.email if user else None,
+        username=user.name if user else None,
+        address=user.address if user else None,
+        phone=user.phone if user else None,
+        club=user.club if user else None,
+        current_user=current_user,
+    )
+
+
+@app.route("/user/edit", methods=["GET", "POST"])
+def edit_user():
+    current_user = get_current_user()
+    if not current_user:
+        flash("Please login.")
+        return redirect("/login")
+
+    user = User.query.filter_by(id=session.get(LOGGED_IN_USER)).first()
+    if request.method == "POST":
+        user.name = request.form["name"]
+        user.email = request.form["email"]
+        user.address = request.form["address"]
+        user.phone = request.form["phone"]
+        user.club = request.form["club"]
+
+        db.session.commit()
+        flash("User updated successfully.")
+        return redirect("/user")
+
+    return render_template(
+        "edit_user.html",
         email=user.email if user else None,
         username=user.name if user else None,
         address=user.address if user else None,
