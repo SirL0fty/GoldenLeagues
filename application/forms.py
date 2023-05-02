@@ -18,5 +18,3 @@ class LoginForm(FlaskForm):
     email = StringField("Email", validators=[DataRequired(), Length(max=255), Email()])
     password = PasswordField("Password", validators=[DataRequired(), Length(max=255)])
     submit = SubmitField("Login")
-
-class EditForm(FlaskForm)
