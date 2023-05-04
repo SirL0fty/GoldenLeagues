@@ -524,3 +524,7 @@ ul.flashmsg {
         background-color: #fff;
         font-size: 1.25rem;
 }
+.carousel-item-img-1 {
+        background-image: url('/static/assets/img/tennis.jpg');
+        background-size: cover;
+        }
