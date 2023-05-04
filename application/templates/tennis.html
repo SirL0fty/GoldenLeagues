@@ -9,9 +9,15 @@
         <a href="/register" class="btn btn-custom text-uppercase btn-lg">Register Now</a>
         </div>
 </header>
-
 <!-- Latest News Section -->
 <section class="tennis-section">
+    <!-- Weather -->
+    <div class="weather pt-3 mb-3">
+      <a class="weatherwidget-io" href="https://forecast7.com/en/50d91n1d40/southampton/" data-label_1="SOUTHAMPTON" data-label_2="WEATHER" data-icons="Climacons" data-days="5" data-theme="clear" data-basecolor="#f1f1f1" >SOUTHAMPTON WEATHER</a>
+      <script>
+        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+      </script>
+    </div>
     <div class="row">
       <div class=" col-md-6 p-3">
         <div class="news-section">
@@ -47,9 +53,6 @@
           <ol class="carousel-indicators">
             <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
             <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
-            <!--<li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
-            <li data-bs-target="#myCarousel" data-bs-slide-to="3"></li>
-            <li data-bs-target="#myCarousel" data-bs-slide-to="4"></li>-->
           </ol>
 
 <!-- Slides -->
@@ -74,36 +77,6 @@
       </div>
     </div>
   </div>
-  <!--<div class="carousel-item">
-    <div class="tennis-carousel" style="position: relative;">
-      <img src="/static/assets/img/sl.jpg" alt="Samantha Lee">
-      <div class="tennis-carousel-body" style="position: absolute; bottom: 0; width: 100%; color: white;">
-        <h5 class="tennis-carousel-title">Samantha Lee</h5>
-        <p class="tennis-carousel-text">Coach Samantha Lee is a dynamic tennis coach known for her innovative coaching methods and infectious enthusiasm for the sport in the UK.  </p>
-        <p class="tennis-carousel-text"><small class="text-warning">Read more</small></p>
-      </div>
-    </div>
-  </div>
-    <div class="carousel-item">
-    <div class="tennis-carousel" style="position: relative;">
-      <img src="/static/assets/img/ms.jpg"  alt="Samantha Lee">
-      <div class="tennis-carousel-body" style="position: absolute; bottom: 0; width: 100%; color: white;">
-        <h5 class="tennis-carousel-title">Maria Sanchez</h5>
-        <p class="tennis-carousel-text">Coach Samantha Lee is a dynamic tennis coach known for her innovative coaching methods and infectious enthusiasm for the sport in the UK.  </p></p>
-        <p class="tennis-carousel-text"><small class="text-warning">Read more</small></p>
-      </div>
-    </div>
-  </div>
-    <div class="carousel-item">
-    <div class="tennis-carousel" style="position: relative;">
-      <img src="/static/assets/img/dw.jpg" alt="Samantha Lee">
-      <div class="tennis-carousel-body" style="position: absolute; bottom: 0; width: 100%; color: white;">
-        <h5 class="tennis-carousel-title">David Wilson</h5>
-        <p class="tennis-carousel-text">Coach David Wilson is a seasoned tennis coach based in the UK with over 20 years of coaching experience at various levels.</p>
-        <p class="tennis-carousel-text"><small class="text-warning">Read more</small></p>
-      </div>
-    </div>
-  </div>-->
 <!-- Controls -->
   <a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -197,7 +170,6 @@
             <li><strong>April 2 - Spring Open Tournament</strong></li>
             <li><strong>April 3 - Youth Invitational</strong></li>
             <li><strong>April 9 - Women's Doubles Championship</strong></li>
-            <li><strong>April 18 - Men's Singles Championship</strong></li>
           </ul>
         </div>
       </div>
@@ -285,40 +257,9 @@
   </div>
 </div>
 </div>
-    </div>
-  </div>
-</div>
-      <!-- Weather -->
-      <div class="weather mb-3">
-        <div class="search">
-          <input type="text" placeholder="Search Location" spellcheck="false" value="Southampton">
-          <button ><img src="/static/assets/weather-icons/search.png"></img></button>
-          <div class="error-message"></div>
-        </div>
-        <div>
-          <img src="/static/assets/weather-icons/rain.png" class="weather-icon">
-          <h1 class="weather-temp">20°C</h1>
-          <h2 class="weather-city">Southampton</h2>
-          <div class="weather-details">
-            <div class="weather-col">
-              <img src="/static/assets/weather-icons/humidity.png">
-              <div>
-                <p class="weather-humidity">50%</p>
-                <p>Humidity</p>
-              </div>
-            </div>  
-            <div class="weather-col">
-              <img src="/static/assets/weather-icons/wind.png">
-              <div>
-                <p class="weather-wind">15km/h</p>
-                <p>Wind Speed</p>
-        </div>
-      </div>
-  </div>
-</div>
 </div>
       <!-- Team Rules -->
-      <div class="mb-3">
+      <div class="m-3">
         <!-- Team rules content goes here -->
         <div class="card">
           <div class="card-header">
