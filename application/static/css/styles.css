@@ -16,7 +16,7 @@ body {
         left: 0;
         bottom: 0;
         z-index: -1;
-        filter: brightness(0.6);
+        filter: brightness(0.3);
         background-size: cover;
 }
 
@@ -415,10 +415,12 @@ section#about {
         margin-left: -5rem;
         margin-right: -5rem;
 }
+
 .container-fluid.crules {
         padding: 0px;
         margin-top: 10px;
 }
+
 .search {
         width: 100%;
         display: flex;

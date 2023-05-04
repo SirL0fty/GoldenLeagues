@@ -1,8 +1,9 @@
 #!/usr/bin/python
-from flask import flash, render_template, request, redirect, session
+from flask import flash, render_template, request, redirect, session, url_for
+from flask_login import login_required
 from application import app, db
 from application.models import User
-from application.forms import RegisterForm, LoginForm
+from application.forms import RegisterForm, LoginForm, EditForm
 
 from sqlalchemy.sql.functions import now
 
@@ -127,23 +128,42 @@ def edit_user():
         return redirect("/login")
 
     user = User.query.filter_by(id=session.get(LOGGED_IN_USER)).first()
-    if request.method == "POST":
-        user.name = request.form["name"]
-        user.email = request.form["email"]
-        user.address = request.form["address"]
-        user.phone = request.form["phone"]
-        user.club = request.form["club"]
-
+    form = EditForm(obj=user)  # Create form instance and populate with user data
+    if form.validate_on_submit():
+        form.populate_obj(user)  # Update user object with form data
         db.session.commit()
         flash("User updated successfully.")
         return redirect("/user")
 
+    # Populate form fields with current user data
+    form.name.data = current_user.name
+    form.email.data = current_user.email
+    form.address.data = current_user.address
+    form.phone.data = current_user.phone
+    form.club.data = current_user.club
+
+    # Get the previous user information
+    prev_user = {
+        "name": user.name,
+        "email": user.email,
+        "address": user.address,
+        "phone": user.phone,
+        "club": user.club,
+    }
+
     return render_template(
         "edit_user.html",
-        email=user.email if user else None,
-        username=user.name if user else None,
-        address=user.address if user else None,
-        phone=user.phone if user else None,
-        club=user.club if user else None,
+        form=form,
         current_user=current_user,
+        prev_user=prev_user,
     )
+
+
+@app.route("/delete_account", methods=["POST"])
+@login_required
+def delete_account():
+    user = get_current_user()
+    db.session.delete(user)
+    db.session.commit()
+    flash("Your account has been deleted.", "success")
+    return redirect("index")
