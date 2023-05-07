@@ -1,13 +1,8 @@
 #!/usr/bin/python
-from flask import flash, render_template, request, redirect, session, url_for, send_file
-from flask_login import login_required
+from flask import flash, render_template, request, redirect, session
 from application import app, db
 from application.models import User
-from io import BytesIO
-import io
 from application.forms import RegisterForm, LoginForm, EditForm, DeleteForm
-from PIL import Image
-
 from sqlalchemy.sql.functions import now
 
 REGISTER_FORM_DATA = "register_form"
