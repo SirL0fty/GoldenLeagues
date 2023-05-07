@@ -11,7 +11,7 @@ conda_package_streaming @ file:///home/conda/feedstock_root/build_artifacts/cond
 cryptography @ file:///Users/runner/miniforge3/conda-bld/cryptography-split_1675828776259/work
 dnspython==2.3.0
 email-validator==2.0.0.post2
-Flask==2.2.3
+Flask==2.2.5
 Flask-SocketIO==5.3.3
 Flask-SQLAlchemy==3.0.3
 Flask-WTF==1.1.1
