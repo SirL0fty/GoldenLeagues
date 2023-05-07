@@ -1,9 +1,12 @@
 #!/usr/bin/python
-from flask import flash, render_template, request, redirect, session, url_for
+from flask import flash, render_template, request, redirect, session, url_for, send_file
 from flask_login import login_required
 from application import app, db
 from application.models import User
-from application.forms import RegisterForm, LoginForm, EditForm
+from io import BytesIO
+import io
+from application.forms import RegisterForm, LoginForm, EditForm, DeleteForm
+from PIL import Image
 
 from sqlalchemy.sql.functions import now
 
@@ -14,6 +17,7 @@ LOGGED_IN_USER = "user_id"
 @app.route("/", methods=["GET", "POST"])
 def index():
     current_user = get_current_user()
+    print(current_user)
     return render_template("index.html", current_user=current_user)
 
 
@@ -107,15 +111,24 @@ def user():
         flash("Please login.")
         return redirect("/login")
 
-    user = User.query.filter_by(id=session.get(LOGGED_IN_USER)).first()
+    logged_in_user_id = session.get(LOGGED_IN_USER)
+    if not logged_in_user_id:
+        flash("Unable to retrieve user information.")
+        return redirect("/login")
+
+    user = User.query.filter_by(id=logged_in_user_id).first()
+
+    if not user:
+        flash("Unable to retrieve user information.")
+        return redirect("/login")
 
     return render_template(
         "user.html",
-        email=user.email if user else None,
-        username=user.name if user else None,
-        address=user.address if user else None,
-        phone=user.phone if user else None,
-        club=user.club if user else None,
+        email=user.email,
+        username=user.name,
+        address=user.address,
+        phone=user.phone,
+        club=user.club,
         current_user=current_user,
     )
 
@@ -128,9 +141,16 @@ def edit_user():
         return redirect("/login")
 
     user = User.query.filter_by(id=session.get(LOGGED_IN_USER)).first()
-    form = EditForm(obj=user)  # Create form instance and populate with user data
+    print("user", user, user.id)
+    form = EditForm(obj=user)
+
     if form.validate_on_submit():
-        form.populate_obj(user)  # Update user object with form data
+        form.populate_obj(user)
+
+        # Save the profile picture, if it was uploaded
+        if form.profile_picture.data:
+            user.profile_picture = form.profile_picture.data.read()
+
         db.session.commit()
         flash("User updated successfully.")
         return redirect("/user")
@@ -144,26 +164,45 @@ def edit_user():
 
     # Get the previous user information
     prev_user = {
-        "name": user.name,
-        "email": user.email,
-        "address": user.address,
-        "phone": user.phone,
-        "club": user.club,
+        "name": current_user.name,
+        "email": current_user.email,
+        "address": current_user.address,
+        "phone": current_user.phone,
+        "club": current_user.club,
     }
+
+    delete_form = DeleteForm()
+    print("rendering edit user form")
 
     return render_template(
         "edit_user.html",
         form=form,
+        user=user,
         current_user=current_user,
         prev_user=prev_user,
+        delete_form=delete_form,
+        user_id=user.id,
     )
 
 
-@app.route("/delete_account", methods=["POST"])
-@login_required
-def delete_account():
-    user = get_current_user()
+@app.route("/user/delete/<int:user_id>", methods=["POST"])
+def delete_user(user_id):
+    current_user = get_current_user()
+    if not current_user:
+        flash("Please login.")
+        return redirect("/login")
+
+    user = User.query.filter_by(id=user_id).first()
+    if not user:
+        flash("Unable to retrieve user information.")
+        return redirect("/login")
+
+    if current_user.id != user_id:
+        flash("You can only delete your own account.")
+        return redirect("/user/edit")
+
     db.session.delete(user)
     db.session.commit()
-    flash("Your account has been deleted.", "success")
-    return redirect("index")
+    print("user deleted")
+    flash("User account has been deleted.")
+    return redirect("/")
