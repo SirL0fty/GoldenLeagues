@@ -1,0 +1,58 @@
+{% extends 'layout.html' %} {% block content %}
+<img src="/static/assets/img/football-bg.jpg" class="bg-image" alt="Football" />
+<header class="cover">
+  <div class="container">
+    <div class="container mt-5 text-start">
+      <div class="row">
+        <div class="col-md-4 offset-md-2">
+          <h1 class="mb-4">Register</h1>
+          <form method="POST" action="{{ url_for('register') }}">
+            {{ register_form.hidden_tag() }}
+            <div class="mb-3">
+              {{ register_form.name(class_='form-control', placeholder='Name') }} {% for error in
+              register_form.name.errors %}
+              <div class="invalid-feedback d-block">{{ error }}</div>
+              {% endfor %}
+            </div>
+            <div class="mb-3">
+              {{ register_form.email(class_='form-control', placeholder='Email') }} {% for error in
+              register_form.email.errors %}
+              <div class="invalid-feedback d-block">{{ error }}</div>
+              {% endfor %}
+            </div>
+            <div class="mb-3">
+              {{ register_form.address(class_='form-control', placeholder='Address') }} {% for error in
+              register_form.address.errors %}
+              <div class="invalid-feedback d-block">{{ error }}</div>
+              {% endfor %}
+            </div>
+            <div class="mb-3">
+              {{ register_form.phone(class_='form-control', placeholder='Phone') }} {% for error in
+              register_form.phone.errors %}
+              <div class="invalid-feedback d-block">{{ error }}</div>
+              {% endfor %}
+            </div>
+            <div class="mb-3">
+              {{ register_form.club(class_='form-control', placeholder='Club') }} {% for error in
+              register_form.club.errors %}
+              <div class="invalid-feedback d-block">{{ error }}</div>
+              {% endfor %}
+            </div>
+            <div class="mb-3">
+              {{ register_form.password(class_='form-control', placeholder='Password') }} {% for error in
+              register_form.password.errors %}
+              <div class="invalid-feedback d-block">{{ error }}</div>
+              {% endfor %}
+            </div>
+            <button type="submit" class="btn btn-warning me-2">Register</button>
+              Already have an account?
+              <a href="{{ url_for('login') }}">Login</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+{% endblock %}

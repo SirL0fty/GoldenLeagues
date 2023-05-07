@@ -1,0 +1,476 @@
+{% extends "layout.html" %}
+{% block content %}
+<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item">
+      <img src="/static/assets/img/coming soon.jpg" class="d-block w-100" alt="Coming Soon">
+      <div class="container">
+        <div class="carousel-caption text-start">
+          <h1>Coming Soon.</h1>
+          <p>Recent investment in the Twnnis Club at MSL will soon allow us to create membership login, competition entry and court booking online!</p>
+          <p><a class="btn btn-lg btn-custom" href="#">Sign up today</a></p>
+        </div>
+      </div>
+    </div>
+ <div class="carousel-item active">
+      <img src="/static/assets/img/tennis.jpg" class="d-block w-100" alt="Tennis Girl">
+      <div class="container">
+        <div class="carousel-caption">
+          <h1>Tennis @ MSL</h1>
+          <p>Fitness and fun for all abilities</p>
+          <p><a class="btn btn-lg btn-custom" href="/register">Regsiter Now</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="/static/assets/img/boy and balls.jpg" class="d-block w-100" alt="...">
+      <div class="container">
+        <div class="carousel-caption">
+          <h1>Keep your eye on the... BALL BOY!.</h1>
+          <p>Our biggest congratulations go to one of our younger memebrs Francis Cook, who has recently gone through the training to become a ball boy at Wimbeldon this year. So proud of your Frankie. Well done.</p>
+          <p><a class="btn btn-lg btn-custom" href="#">Learn more</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="/static/assets/img/trophy.jpg" class="d-block w-100" alt="...">
+      <div class="container">
+        <div class="carousel-caption">
+          <h1>Truimph for MSL.</h1>
+          <p>Elliot and De-Anne won their mixed doubles quarter final against Porttwest Tenni Club at the weekend. They now face a tough Semi final match at home agasint last years winners Rob and Amy Denver to get themselves into South West championship final. if you want to show your support for the team, they will be playing on court 4 on Saturday at 10am. Please make sure you enter the area when a point is not being played. Barbeque and Pimms on the lawns after the match ends.</p>
+          <p><a class="btn btn-lg btn-custom" href="#">Learn more</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="/static/assets/img/prosecco.jpg" class="d-block w-100" alt="...">
+      <div class="container">
+        <div class="carousel-caption text-end">
+          <h1>Girls, Girls, Girls</h1>
+          <p>We had a lovely Ladies evening on Tuesday with 15 of our ladies coming coming out to have a few games and some early evening Prosecco and gossip.</p>
+          <p><a class="btn btn-lg btn-custom" href="#">Browse gallery</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<!-- Latest News Section -->
+<section class="tennis-section">
+    <!-- Weather -->
+    <div class="weather pt-3 mb-5">
+      <a class="weatherwidget-io" href="https://forecast7.com/en/50d91n1d40/southampton/" data-label_1="SOUTHAMPTON" data-label_2="WEATHER" data-icons="Climacons" data-days="5" data-theme="clear" data-basecolor="#f1f1f1" >SOUTHAMPTON WEATHER</a>
+      <script>
+        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+      </script>
+    </div>
+    <div class="container marketing">
+  <div class="row text-center">
+    <div class="col-lg-4 pb-5">
+      <img src="/static/assets/img/headshot1.png" class="headshot m-2" alt="...">
+      <h2 class="fw-normal">Elliot Varella</h2>
+      <p>I'm thrilled to be the tennis captain here at the multi sports complex.</p>
+      <button class="btn btn-custom" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+        More Info
+      </button>
+      <div class="collapse collapsible" id="collapse1">
+        <div class="card card-body-info">
+          <p>
+My name is Elliot Varella and I'm thrilled to be the tennis captain here at the multi sports complex. Tennis has been my passion since I was a teenager, and I've been a member of this club for the past 10 years. During that time, I've played in various leagues and tournaments, and I've also had the opportunity to volunteer as a coach for our junior tennis program. I've gained a lot of experience both on and off the court, and I'm excited to bring that experience to my role as captain.
+
+For me, being a captain is all about leadership. I strive to be a positive influence on and off the court, and I always try to lead by example. I believe that my positive attitude and willingness to help others has earned me the respect of my peers and opponents. I'm always looking for ways to motivate and inspire my teammates, and I'm dedicated to helping them improve their game.
+
+As captain, my responsibilities include working closely with our coach to develop practice plans and match strategies, and communicating these plans to my teammates. I also organize team meetings and ensure that everyone is aware of the schedule for matches and tournaments. During matches, I provide guidance and support to my teammates, and I'm always looking for ways to improve their performance.
+
+Overall, I feel honoured to be the tennis captain at MSL. I'm committed to helping our team succeed both on and off the court, and I'm excited to see what we can accomplish together.
+
+Please feel free to reach out to me with regards to any thing tennis.
+
+Elliot
+
+Elliot.Varella@msl.uk
+07723456789</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 pb-5">
+      <img src="/static/assets/img/headshot2.png" class="headshot m-2" alt="...">
+      <h2 class="fw-normal">De-Anne Stewart Leigh</h2>
+      <p>Tennis has been a part of my life for as long as I can remember.</p>
+      <button class="btn btn-custom" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+        More Info
+      </button>
+      <div class="collapse collapsible" id="collapse2">
+        <div class="card card-body-info">
+          <p>
+My name is De-Anne stewart leigh, Tennis has been a part of my life for as long as I can remember. I grew up playing the sport and have always loved the thrill of being on the court. After college, I decided to pursue my passion for tennis and became a certified coach. I've been coaching at the local sports complex for the past 7 years and it has been an incredibly rewarding experience. Watching young players develop their skills and grow as athletes is a true joy.
+
+I'm also the wife of the club owner, which gives me the opportunity to take on the role of tennis captain. As the captain, I'm responsible for managing the tennis program at the club, from coaching to organising tournaments. I work closely with the other coaches and players to make sure everyone is happy and the program runs smoothly.
+
+I'm known for my positive attitude and dedication to the sport. I believe that tennis is not just about winning or losing, but about building character, resilience, and sportsmanship. My goal as a coach and captain is to instill these values in my players and help them become not only better athletes, but also better individuals.
+
+Being the tennis captain at the local sports complex is an honor and a privilege. I love being able to contribute to the growth of the club and the sport I'm so passionate about. I hope to continue making a positive impact on the tennis community for many years to come.
+
+De-Anne
+
+De-Anne.Stewart-leigh@msl.uk
+07712345678</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 pb-5">
+      <img src="/static/assets/img/headshot3.png" class="headshot m-2" alt="...">
+      <h2 class="fw-normal">Ana Hutchinson</h2>
+      <p>De-Anne came to coach our school team and really inspired me to play more often.</p>
+      <button class="btn btn-custom " type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+        More Info
+      </button>
+      <div class="collapse collapsible" id="collapse3">
+        <div class="card card-body-info">
+          <p>Hi there,
+
+My name is Ana Hutchinson, I started playing tennis because of De-Anne, she came to coach our school team and really inspired me to play more often.
+
+I am now playing at county level and just hope that I can inspire and lead our youth team to more success.
+
+If we can get young people playing, and getting into a sport, they will be healthy in the future and the facilities are so good!
+
+Sport is for Everyone! Enjoy it!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+<!-- Leaderboard -->
+<div class="leaderboard-container">
+  <div class="row">
+  <div class="col-lg-6">
+    <!-- Calendar -->
+    <div class="mb-3">
+      <!-- Calendar content goes here -->
+      <div class="card">
+        <div class="card-header">
+          <h5 class="card-title">Tennis Competitions - April 2023</h5>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">Sun</th>
+                  <th scope="col">Mon</th>
+                  <th scope="col">Tue</th>
+                  <th scope="col">Wed</th>
+                  <th scope="col">Thu</th>
+                  <th scope="col">Fri</th>
+                  <th scope="col">Sat</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td class="bg-light">1</td>
+                  <td class="bg-danger text-white">2</td>
+                </tr>
+                <tr>
+                  <td class="bg-info text-white">3</td>
+                  <td>4</td>
+                  <td>5</td>
+                  <td>6</td>
+                  <td>7</td>
+                  <td>8</td>
+                  <td>9</td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                  <td>11</td>
+                  <td>12</td>
+                  <td class="bg-success text-white">13</td>
+                  <td>14</td>
+                  <td>15</td>
+                  <td>16</td>
+                </tr>
+                <tr>
+                  <td>17</td>
+                  <td class="bg-warning text-white">18</td>
+                  <td>19</td>
+                  <td>20</td>
+                  <td>21</td>
+                  <td>22</td>
+                  <td>23</td>
+                </tr>
+                <tr>
+                  <td>24</td>
+                  <td>25</td>
+                  <td>26</td>
+                  <td>27</td>
+                  <td>28</td>
+                  <td>29</td>
+                  <td>30</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Upcoming Competitions:</p>
+          <ul>
+            <li><strong>April 2 - Spring Open Tournament</strong></li>
+            <li><strong>April 3 - Youth Invitational</strong></li>
+            <li><strong>April 9 - Women's Doubles Championship</strong></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- Leaderboard -->
+      <div class="col-lg-6">
+        <!-- Leaderboard content goes here -->
+        <div class="card">
+  <div class="card-header">
+    <h5 class="card-title">Tennis Leaderboard</h5>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Player</th>
+            <th>Matches Won</th>
+            <th>Matches Lost</th>
+            <th>Winning %</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>John Smith</td>
+            <td>5</td>
+            <td>1</td>
+            <td>83%</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Jane Doe</td>
+            <td>4</td>
+            <td>2</td>
+            <td>67%</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Mark Johnson</td>
+            <td>4</td>
+            <td>2</td>
+            <td>67%</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Sara Lee</td>
+            <td>3</td>
+            <td>3</td>
+            <td>50%</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>David Chen</td>
+            <td>3</td>
+            <td>3</td>
+            <td>50%</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Emily Wong</td>
+            <td>2</td>
+            <td>4</td>
+            <td>33%</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Chris Kim</td>
+            <td>2</td>
+            <td>4</td>
+            <td>33%</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>Mike Brown</td>
+            <td>1</td>
+            <td>5</td>
+            <td>17%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+      <!-- Team Rules -->
+      <div class="pb-3">
+        <!-- Team rules content goes here -->
+        <div class="card">
+          <div class="card-header">
+            <h5 class="card-title">Club Rules</h5>
+          </div>
+          <div class="card-body">
+          <div class="accordion" id="accordionPanelsStayOpenExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                  <strong>Booking of courts</strong>
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                <div class="accordion-body">
+                  Using the courts is FREE to all members but all courts must still be booked online by clicking here.
+                    Club events, tournaments and competitions and coaching are all pre-booked. Hard courts (Nos 9 & 10) are avilable throughout the year
+                    and ten grass courts (Nos 1 & 8) weather permitting May to September.
+                </div>
+              </div>
+              </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                  <strong> Visitors</strong>
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  Friends and Family of memebers are always welcome at £5 per session per Adult and £3 per session as junior (max 5 pe year) payable in shop or to any Committee Member, or staff member.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                  <strong>Pay & Play</strong>
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  Non Memebers are welcome to book and play on the day. Court Sessions last 1/5 hours and cost £20 for 4 adults, £16 for familt of 2 Adults and 2 Children, £12 for 2 players and £3 each for juniors. Please book and pay at the shop on arrival.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+                  <strong>Mix-In Sessions</strong>
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  Every Tuesdays and Thursday mornings all year 10.00am - 12.00pm (mid-July to end August 14.00 - 16:00pm).
+                  Wednesday evenings May to September from 5.00pm.
+                  all members and visitors are welcome.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false" aria-controls="panelsStayOpen-collapseFive">
+                  <strong>Clothing</strong>
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  Recognised tennis shoes and appropriate clothing is expected to be worn on the Courts. Please use tennis changing rooms located to the right of the courts.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false" aria-controls="panelsStayOpen-collapseSix">
+                  <strong>Events, Competitions and Tournaments</strong>
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  A comprehensive programme of events is organised by the Tennis Committee. Notices will be posted on the tennis section notice board along with entry lists and other details.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSeven" aria-expanded="false" aria-controls="panelsStayOpen-collapseSeven">
+                  <strong>Holiday Pragramme</strong>
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseSeven" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  Junior, Men's, Ladies and mixed doubles tournaments are held throughout July and August. mini/tennis coaching ages (5- 11) sessions are held every morning.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseEight" aria-expanded="false" aria-controls="panelsStayOpen-collapseEight">
+                  <strong>Coaching</strong>
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseEight" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  Individual and group coaching is available for adults and juniors please contact De-ann Stewart-Leigh
+                  For general advice and furthur details please ocntact the shop
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseNine" aria-expanded="false" aria-controls="panelsStayOpen-collapseNine">
+                  <strong>Welfare Policy</strong>
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseNine" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <strong> MSL Tennis is committed to prioritising the well-being of all children and adults, promoting safeguarding in our club at all times, including all programmes and events that we run.  In addition we are proud to have a Diversity and Inclusion Policy that demonstrates our commitment to making tennis diverse and inclusive for all.  We are committed to ensuring our practices reflect statutory responsibilities, government guidance and complies with best practice and LTA requirements.
+                    A copy of the club’s full Safeguarding Policy can be read here
+                    The Diversity and Inclusion Policy can be read here.
+                    The Whistleblowing Policy can be read here.
+                    All policies are also displayed in the tennis pavilion, and are also available from the club office and the MSL Welfare Officer
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  </div>
+  </div>
+
+  <script>
+const collapsibles = document.querySelectorAll('.collapsible');
+const buttons = document.querySelectorAll('[data-bs-toggle="collapse"]');
+
+buttons.forEach(button => {
+  button.addEventListener('click', () => {
+    const target = document.querySelector(button.getAttribute('data-bs-target'));
+    collapsibles.forEach(collapsible => {
+      if (collapsible !== target && collapsible.classList.contains('show')) {
+        collapsible.classList.remove('show');
+      }
+    });
+  });
+});
+</script>
+
+{% endblock %}
+
+
