@@ -50,7 +50,7 @@
             {{ form.club(class="form-control", value=prev_user['club']) }}
         </div>
     </div>
-    
+      {{ form.submit(class="btn btn-custom float-end") }}
 </form>
 <div class="d-flex justify-content-end">
   <form method="POST" action="{{ url_for('delete_user', user_id=user.id) }}" onsubmit="return confirm('Are you sure you want to delete your account? This action cannot be undone.');">
@@ -58,9 +58,7 @@
     {{ delete_form.csrf_token }}
     {{ delete_form.submit (class="btn btn-danger py-2 me-2") }}
   </form>
-  {{ form.submit(class="btn btn-custom float-end") }}
 </div>
-
       </div>
     </div>
   </div>
