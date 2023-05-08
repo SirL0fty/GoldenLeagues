@@ -14,7 +14,7 @@ body {
 /* Background image styling */
 .bg-image {
         width: 100vw;
-        height: 100%x;
+        height: 100%;
         object-fit: cover;
         position: absolute;
         top: 0;
