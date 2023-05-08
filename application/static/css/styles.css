@@ -14,7 +14,7 @@ body {
 /* Background image styling */
 .bg-image {
         width: 100vw;
-        height: 100%x;
+        height: 100%;
         object-fit: cover;
         position: absolute;
         top: 0;
@@ -162,7 +162,7 @@ header.cover .cover-heading {
         font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
 
         /* Header styling for larger screens */
         header.cover {
@@ -365,6 +365,7 @@ div#sportshowcase {
 
 section#about {
         margin-bottom: 0px;
+        padding: 3rem;
 }
 
 .news-section {
