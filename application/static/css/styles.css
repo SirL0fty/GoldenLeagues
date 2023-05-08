@@ -96,7 +96,11 @@ a:hover {
         max-width: 32px;
         color: #fff;
 }
-
+@media (min-width: 768px){
+        .main-nav {
+                background-color:transparent!important;
+        }
+}
 /* Header styling */
 header.cover {
         padding-top: 5rem;
