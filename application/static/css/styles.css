@@ -323,7 +323,7 @@ a.contact-num:hover p {
 
 /* Tennis Page Styles */
 .tennis-section {
-        padding: 0rem 5rem;
+        padding: 0rem 2rem;
         background-color: #fff;
         font-size: 1.25rem;
 }
@@ -432,8 +432,8 @@ section#about {
 }
 
 .weather {
-        margin-left: -5rem;
-        margin-right: -5rem;
+        margin-left: -2rem;
+        margin-right: -2rem;
 }
 
 .container-fluid.crules {
