@@ -1,7 +1,7 @@
 #!/usr/bin/python
 from flask import flash, render_template, request, redirect, session
 from application import app, db
-from application.models import User, Event
+from application.models import User, UserEvent, Event
 from application.forms import (
     RegisterForm,
     LoginForm,
@@ -44,6 +44,8 @@ def admin():
 
     news_form = NewsForm()
     event_form = EventForm()
+    delete_form = DeleteForm()
+    all_events = Event.query.all()
 
     users = User.query.all()
 
@@ -53,6 +55,8 @@ def admin():
         current_user=current_user,
         form=news_form,
         event_form=event_form,
+        delete_form=delete_form,
+        event=all_events,
     )
 
 
@@ -61,7 +65,9 @@ def login():
     login_form = LoginForm()
     current_user = get_current_user()
     return render_template(
-        "/login.html", login_form=login_form, current_user=current_user
+        "/login.html",
+        login_form=login_form,
+        current_user=current_user,
     )
 
 
@@ -149,6 +155,8 @@ def user():
         return redirect("/login")
 
     user = User.query.filter_by(id=logged_in_user_id).first()
+    userevent = UserEvent.query.filter_by(user_id=current_user.id).all()
+    all_events = Event.query.all()
 
     if not user:
         flash("Unable to retrieve user information.")
@@ -162,6 +170,8 @@ def user():
         phone=user.phone,
         club=user.club,
         current_user=current_user,
+        userevent=userevent,
+        event=all_events,
     )
 
 
@@ -285,6 +295,7 @@ def create_event():
         return redirect("/")
 
     event_form = EventForm()
+    delete_form = DeleteForm()
 
     if event_form.validate_on_submit():
         title = event_form.title.data
@@ -310,4 +321,12 @@ def create_event():
         "create_event.html",
         current_user=current_user,
         event_form=event_form,
+        delete_user=delete_form,
     )
+
+
+@app.route("/event")
+def event():
+    all_events = Event.query.all()
+
+    return render_template(event.html, event=event, all_events=all_events)

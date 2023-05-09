@@ -4,6 +4,7 @@ from sqlalchemy.ext.hybrid import hybrid_property
 
 
 class User(db.Model):
+    __tablename__ = "user"
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(255), nullable=False)
     email = db.Column(db.String(255), unique=True, nullable=False)
@@ -16,6 +17,7 @@ class User(db.Model):
     updated_at = db.Column(
         db.DateTime, server_default=db.func.now(), server_onupdate=db.func.now()
     )
+    event = db.relationship("Event", secondary="userevent", backref="users")
 
     @hybrid_property
     def password(self):
@@ -28,12 +30,19 @@ class User(db.Model):
     def is_correct_password(self, plaintext):
         return bcrypt.check_password_hash(self._password, plaintext)
 
+
 class Event(db.Model):
+    __tablename__ = "event"
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(255), nullable=True)
     start_date = db.Column(db.Date, nullable=True)
     end_date = db.Column(db.Date, nullable=True)
     description = db.Column(db.Text, nullable=True)
-    
-    
-    
+    user = db.relationship("User", secondary="userevent", backref="events")
+
+
+class UserEvent(db.Model):
+    __tablename__ = "userevent"
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
+    event_id = db.Column(db.Integer, db.ForeignKey("event.id"))
