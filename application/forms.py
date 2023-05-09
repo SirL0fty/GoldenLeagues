@@ -1,6 +1,6 @@
 #!/usr/bin/python
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, PasswordField, FileField
+from wtforms import StringField, SubmitField, PasswordField, FileField, TextAreaField
 from wtforms.validators import DataRequired, Email, Length, Optional
 
 
@@ -33,3 +33,10 @@ class EditForm(FlaskForm):
 
 class DeleteForm(FlaskForm):
     submit = SubmitField("Delete Account")
+
+
+class NewsForm(FlaskForm):
+    title = StringField("Title", validators=[DataRequired()])
+    content = TextAreaField("Content", validators=[DataRequired()])
+    created_at = StringField("Created At", validators=[DataRequired()])
+    image = FileField("Image", validators=[DataRequired()])

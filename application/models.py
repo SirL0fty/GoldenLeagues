@@ -11,6 +11,7 @@ class User(db.Model):
     phone = db.Column(db.String(255), nullable=False)
     club = db.Column(db.String(255), nullable=False)
     _password = db.Column(db.String(100), nullable=False)
+    is_admin = db.Column(db.Boolean, default=False)
     created_at = db.Column(db.DateTime, server_default=db.func.now())
     updated_at = db.Column(
         db.DateTime, server_default=db.func.now(), server_onupdate=db.func.now()

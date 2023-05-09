@@ -81,12 +81,14 @@ a:hover {
 .navbar-collapse.offcanvas-collapse.show {
         transform: translateX(0%);
 }
+
 .navbar-collapse {
         background-color: #2c2c2c;
         width: 100%;
         margin: 0 -1rem;
         padding: 0 1rem;
-    }
+}
+
 .navbar-toggler {
         z-index: 1031;
 }
@@ -96,11 +98,13 @@ a:hover {
         max-width: 32px;
         color: #fff;
 }
-@media (min-width: 768px){
+
+@media (min-width: 768px) {
         .main-nav {
-                background-color:transparent!important;
+                background-color: transparent !important;
         }
 }
+
 /* Header styling */
 header.cover {
         padding-top: 5rem;
@@ -561,7 +565,7 @@ ul.flashmsg {
 .headshot {
         width: 15rem;
         height: 15rem;
-        margin-left: 0rem!important;
+        margin-left: 0rem !important;
 
 }
 
@@ -576,4 +580,9 @@ ul.flashmsg {
         padding: 10px;
         overflow: hidden;
         font-size: 12px;
+}
+
+.news-section {
+
+        background-color: #fff;
 }
