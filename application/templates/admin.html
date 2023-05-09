@@ -7,9 +7,10 @@
 />
 <header class="cover">
   <div class="container">
-    <div class="cover-heading text-uppercase">{{ username }}</div>
+    <div class="cover-heading text-uppercase">{{ name }}</div>
   </div>
 </header>
+
 <!-- News Section -->
 <section class="news-section">
   <div class="container">
@@ -24,6 +25,24 @@
       {{ form.created_at.label }} {{ form.created_at }}<br />
       {{ form.image.label }} {{ form.image }}<br />
       <input type="submit" value="Create News Post" />
+    </form>
+  </div>
+</section>
+<!-- Events Section -->
+<section class="events-section">
+  <div class="container">
+    <h1 class="text-center my-5">Events Management</h1>
+    <form
+      action="{{ url_for('create_event') }}"
+      method="POST"
+      enctype="multipart/form-data"
+    >
+      {{ event_form.hidden_tag() }} {{ event_form.title.label }} {{
+      event_form.title }}<br />
+      {{ event_form.description.label }} {{ event_form.description }}<br />
+      {{ event_form.start_date.label }} {{ event_form.start_date }}<br />
+      {{ event_form.end_date.label }} {{ event_form.end_date }}<br />
+      <input type="submit" value="Create New Event" />
     </form>
   </div>
 </section>

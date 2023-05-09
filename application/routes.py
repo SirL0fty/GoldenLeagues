@@ -1,8 +1,15 @@
 #!/usr/bin/python
 from flask import flash, render_template, request, redirect, session
 from application import app, db
-from application.models import User
-from application.forms import RegisterForm, LoginForm, EditForm, DeleteForm, NewsForm
+from application.models import User, Event
+from application.forms import (
+    RegisterForm,
+    LoginForm,
+    EditForm,
+    DeleteForm,
+    NewsForm,
+    EventForm,
+)
 from sqlalchemy.sql.functions import now
 import datetime
 
@@ -36,9 +43,16 @@ def admin():
         return redirect("/login")
 
     news_form = NewsForm()
+    event_form = EventForm()
+
     users = User.query.all()
+
     return render_template(
-        "admin.html", users=users, current_user=current_user, form=news_form
+        "admin.html",
+        users=users,
+        current_user=current_user,
+        form=news_form,
+        event_form=event_form,
     )
 
 
@@ -257,4 +271,43 @@ def post_news():
         "post_news.html",
         form=form,
         current_user=current_user,
+    )
+
+
+@app.route("/create_event", methods=["GET", "POST"])
+def create_event():
+    current_user = get_current_user()
+    if not current_user:
+        flash("Please login.")
+        return redirect("/login")
+    if not current_user.is_admin:
+        flash("You are not an admin.")
+        return redirect("/")
+
+    event_form = EventForm()
+
+    if event_form.validate_on_submit():
+        title = event_form.title.data
+        description = event_form.description.data
+        start_date = event_form.start_date.data
+        end_date = event_form.end_date.data
+
+        event = Event(
+            title=title,
+            description=description,
+            start_date=start_date,
+            end_date=end_date,
+        )
+        print("event", event)
+        db.session.add(event)
+        print("event added")
+        db.session.commit()
+
+        flash("Event created successfully!")
+        return redirect("/admin")
+
+    return render_template(
+        "create_event.html",
+        current_user=current_user,
+        event_form=event_form,
     )

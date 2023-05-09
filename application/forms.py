@@ -1,6 +1,13 @@
 #!/usr/bin/python
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, PasswordField, FileField, TextAreaField
+from wtforms import (
+    StringField,
+    SubmitField,
+    PasswordField,
+    FileField,
+    TextAreaField,
+    DateField,
+)
 from wtforms.validators import DataRequired, Email, Length, Optional
 
 
@@ -40,3 +47,10 @@ class NewsForm(FlaskForm):
     content = TextAreaField("Content", validators=[DataRequired()])
     created_at = StringField("Created At", validators=[DataRequired()])
     image = FileField("Image", validators=[DataRequired()])
+
+
+class EventForm(FlaskForm):
+    title = StringField("Title", validators=[DataRequired()])
+    description = TextAreaField("Content", validators=[DataRequired()])
+    start_date = DateField("Start Date", validators=[DataRequired()])
+    end_date = DateField("End Date", validators=[DataRequired()])
