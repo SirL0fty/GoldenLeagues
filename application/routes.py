@@ -2,8 +2,9 @@
 from flask import flash, render_template, request, redirect, session
 from application import app, db
 from application.models import User
-from application.forms import RegisterForm, LoginForm, EditForm, DeleteForm
+from application.forms import RegisterForm, LoginForm, EditForm, DeleteForm, NewsForm
 from sqlalchemy.sql.functions import now
+import datetime
 
 REGISTER_FORM_DATA = "register_form"
 LOGGED_IN_USER = "user_id"
@@ -22,6 +23,23 @@ def get_current_user():
         return User.query.get(user_id)
     else:
         return None
+
+
+@app.route("/admin", methods=["GET", "POST"])
+def admin():
+    current_user = get_current_user()
+    if not current_user:
+        flash("Please login.")
+        return redirect("/login")
+    if not current_user.is_admin:
+        flash("You are not an admin.")
+        return redirect("/login")
+
+    news_form = NewsForm()
+    users = User.query.all()
+    return render_template(
+        "admin.html", users=users, current_user=current_user, form=news_form
+    )
 
 
 @app.route("/login")
@@ -46,7 +64,12 @@ def validate_login():
             user.last_login = now()
             db.session.commit()
             flash(f"{user.name} logged in successfully!")
-            return redirect("/user")
+
+            # check if user is an admin
+            if user.is_admin:
+                return redirect("/admin")
+            else:
+                return redirect("/user")
 
         flash("Invalid email or password.")
 
@@ -201,3 +224,37 @@ def delete_user(user_id):
     print("user deleted")
     flash("User account has been deleted.")
     return redirect("/")
+
+
+@app.route("/post_news", methods=["GET", "POST"])
+def post_news():
+    current_user = get_current_user()
+    if not current_user:
+        flash("Please login.")
+        return redirect("/login")
+    if not current_user.is_admin:
+        flash("You are not an admin.")
+        return redirect("/")
+
+    form = NewsForm()
+
+    if form.validate_on_submit():
+        title = form.title.data
+        content = form.content.data
+        created_at = datetime.now()
+        image = form.image.data
+
+        news_form = NewsForm(
+            title=title, content=content, created_at=created_at, image=image
+        )
+        db.session.add(news_form)
+        db.session.commit()
+
+        flash("News post created successfully!")
+        return redirect("/admin")
+
+    return render_template(
+        "post_news.html",
+        form=form,
+        current_user=current_user,
+    )

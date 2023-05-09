@@ -14,28 +14,16 @@
 <section class="news-section">
   <div class="container">
     <h1 class="text-center my-5">News Management</h1>
-    <form method="POST" action="{{ url_for('post_news') }}">
-      <div class="mb-3">
-        <label for="title" class="form-label">Title</label>
-        <input
-          type="text"
-          class="form-control"
-          id="title"
-          name="title"
-          required
-        />
-      </div>
-      <div class="mb-3">
-        <label for="content" class="form-label">Content</label>
-        <textarea
-          class="form-control"
-          id="content"
-          name="content"
-          rows="5"
-          required
-        ></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary">Post News</button>
+    <form
+      action="{{ url_for('post_news') }}"
+      method="POST"
+      enctype="multipart/form-data"
+    >
+      {{ form.hidden_tag() }} {{ form.title.label }} {{ form.title }}<br />
+      {{ form.content.label }} {{ form.content }}<br />
+      {{ form.created_at.label }} {{ form.created_at }}<br />
+      {{ form.image.label }} {{ form.image }}<br />
+      <input type="submit" value="Create News Post" />
     </form>
   </div>
 </section>
@@ -47,9 +35,9 @@
       <thead>
         <tr>
           <th scope="col">ID</th>
-          <th scope="col">Username</th>
+          <th scope="col">Name</th>
           <th scope="col">Email</th>
-          <th scope="col">Role</th>
+          <th scope="col" class="text-center">Role</th>
           <th scope="col">Actions</th>
         </tr>
       </thead>
@@ -57,13 +45,13 @@
         {% for user in users %}
         <tr>
           <td>{{ user.id }}</td>
-          <td>{{ user.username }}</td>
+          <td>{{ user.name }}</td>
           <td>{{ user.email }}</td>
-          <td>{{ user.role }}</td>
+          <td>{{ "Yes" if user.is_admin else "No" }}</td>
           <td>
             <a
               href="{{ url_for('edit_user', user_id=user.id) }}"
-              class="btn btn-sm btn-primary"
+              class="btn btn-sm btn-custom"
               >Edit</a
             >
             <a
@@ -79,87 +67,4 @@
     </table>
   </div>
 </section>
-<!-- Calendar Section -->
-<section class="calendar-section">
-  <div class="container">
-    <h1 class="text-center my-5">Calendar</h1>
-    <div class="row">
-      <div class="col-md-8 mx-auto">
-        <div class="card">
-          <div class="card-header">Add Event</div>
-          <div class="card-body">
-            <form>
-              <div class="row mb-3">
-                <label for="event-title" class="col-sm-2 col-form-label"
-                  >Title</label
-                >
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" id="event-title" />
-                </div>
-              </div>
-              <div class="row mb-3">
-                <label for="event-start-date" class="col-sm-2 col-form-label"
-                  >Start Date</label
-                >
-                <div class="col-sm-10">
-                  <input
-                    type="date"
-                    class="form-control"
-                    id="event-start-date"
-                  />
-                </div>
-              </div>
-              <div class="row mb-3">
-                <label for="event-end-date" class="col-sm-2 col-form-label"
-                  >End Date</label
-                >
-                <div class="col-sm-10">
-                  <input type="date" class="form-control" id="event-end-date" />
-                </div>
-              </div>
-              <div class="row mb-3">
-                <label for="event-description" class="col-sm-2 col-form-label"
-                  >Description</label
-                >
-                <div class="col-sm-10">
-                  <textarea
-                    class="form-control"
-                    id="event-description"
-                    rows="3"
-                  ></textarea>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-12">
-                  <button type="submit" class="btn btn-primary float-end">
-                    Add
-                  </button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-8 mx-auto">
-        <div class="card">
-          <div class="card-header">Calendar</div>
-          <div class="card-body">
-            <div class="calendar">
-              <div class="row">
-                <div class="col">
-                  <div class="calendar-header">
-                    <button class="btn btn-primary float-start">
-                      <i class="bi bi-chevron-left"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+{% endblock %} ```
