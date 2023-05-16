@@ -4,6 +4,8 @@ import os
 from flask import Flask
 from flask_bcrypt import Bcrypt
 from dotenv import load_dotenv
+from flask_wtf.csrf import CSRFProtect
+
 
 from application.database import db
 
@@ -23,6 +25,9 @@ app.config[
 ] = f"mysql+pymysql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}"
 
 app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")
+app.config["WTF_CSRF_SECRET_KEY"] = os.getenv("CSRF_SECRET_KEY")
+app.config["WTF_CSRF_METHODS"] = ["POST", "PUT", "PATCH", "DELETE"]
+csrf = CSRFProtect(app)
 db.init_app(app)
 bcrypt = Bcrypt(app)
 

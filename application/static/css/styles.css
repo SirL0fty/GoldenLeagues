@@ -4,11 +4,15 @@ body {
         padding: 0;
         height: 100%;
         background-color: #2c2c2c;
+        min-height: 100vh;
+        display: grid;
+        grid-template-rows: 1fr auto;
 }
 
 .logo {
         max-width: 100%;
         height: auto;
+
 }
 
 /* Background image styling */
@@ -576,34 +580,36 @@ ul.flashmsg {
         background-color: #fff;
         height: 100%;
         padding: 2rem 0rem;
-    }
+}
+
 .news-section .container-fluid {
         max-width: 600px;
         margin: 0 auto;
         padding: 0 2rem;
-      }
-    
+}
+
 .news-section form {
         background-color: #f1f1f1;
         border: none;
         border-radius: 5px;
         padding: 20px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      }
-    
+}
+
 .news-section form .form-control {
         margin-bottom: 10px;
-      }
-    
+}
+
 .news-section form .btn-custom {
         background-color: #E4BB25;
         color: #fff;
-      }
+}
+
 .row-events {
         background-color: #f8f9fa;
         padding: 20px;
 
-      }
+}
 
 .card {
         background-color: #f1f1f1;
@@ -611,27 +617,28 @@ ul.flashmsg {
         border-radius: 5px;
         margin-bottom: 20px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      }
+}
+
 .user-section {
         background-color: #f8f9fa;
         margin-bottom: 20px;
-      }
-    
+}
+
 .user-section .container {
         max-width: 800px;
         margin: 0 auto;
-      }
-    
+}
+
 .user-section table {
         border-radius: 5px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         margin-top: 20px;
-      }
-    
+}
+
 .user-section table th {
         text-align: center;
-      }
-    
+}
+
 .user-section table td {
         text-align: center;
-      }
+}

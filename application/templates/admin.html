@@ -86,9 +86,18 @@
       <div class="card-body">
         <h2 class="card-title text-center">Upcoming Events</h2>
       <ul class="list-group list-group-flush">
-        {% for event in event %}
-        <li class="list-group-item">{{ event.start_date }}: {{ event.title }}</li>
-        {% endfor %}
+{% for event in upcoming_events %}
+  <li class="list-group-item">
+    {{ form.csrf_token }}
+    {{ event.start_date }}: {{ event.title }}
+    <form method="POST" action="{{ url_for('delete_event', event_id=event.id) }}">
+      <input type="hidden" name="_method" value="DELETE">
+      <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+    </form>
+  </li>
+{% endfor %}
+
+
       </ul>
     </div>
   </div>

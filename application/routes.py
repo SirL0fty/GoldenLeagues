@@ -11,7 +11,7 @@ from application.forms import (
     EventForm,
 )
 from sqlalchemy.sql.functions import now
-import datetime
+from datetime import datetime
 
 REGISTER_FORM_DATA = "register_form"
 LOGGED_IN_USER = "user_id"
@@ -49,6 +49,10 @@ def admin():
 
     users = User.query.all()
 
+    for event in all_events:
+        date_obj = datetime.strptime(str(event.start_date), "%Y-%m-%d")
+        event.start_date = datetime.strftime(date_obj, "%d %B")
+
     return render_template(
         "admin.html",
         users=users,
@@ -56,7 +60,8 @@ def admin():
         form=news_form,
         event_form=event_form,
         delete_form=delete_form,
-        event=all_events,
+        upcoming_events=all_events,
+        username=current_user.name,
     )
 
 
@@ -158,6 +163,10 @@ def user():
     userevent = UserEvent.query.filter_by(user_id=current_user.id).all()
     all_events = Event.query.all()
 
+    for event in all_events:
+        date_obj = datetime.strptime(str(event.start_date), "%Y-%m-%d")
+        event.start_date = datetime.strftime(date_obj, "%d %B")
+
     if not user:
         flash("Unable to retrieve user information.")
         return redirect("/login")
@@ -171,7 +180,7 @@ def user():
         club=user.club,
         current_user=current_user,
         userevent=userevent,
-        event=all_events,
+        upcoming_events=all_events,
     )
 
 
@@ -185,6 +194,8 @@ def edit_user():
     user = User.query.filter_by(id=session.get(LOGGED_IN_USER)).first()
     print("user", user, user.id)
     form = EditForm(obj=user)
+    userevent = UserEvent.query.filter_by(user_id=current_user.id).all()
+    all_events = Event.query.all()
 
     if form.validate_on_submit():
         form.populate_obj(user)
@@ -224,6 +235,8 @@ def edit_user():
         prev_user=prev_user,
         delete_form=delete_form,
         user_id=user.id,
+        userevent=userevent,
+        upcoming_events=all_events,
     )
 
 
@@ -309,20 +322,53 @@ def create_event():
             start_date=start_date,
             end_date=end_date,
         )
-        print("event", event)
         db.session.add(event)
-        print("event added")
         db.session.commit()
 
         flash("Event created successfully!")
+        return redirect("/admin")
+
+    elif delete_form.validate_on_submit():
+        event_id = delete_form.id.data
+        event = Event.query.get(event_id)
+        if event:
+            db.session.delete(event)
+            db.session.commit()
+            flash("Event deleted successfully!")
+        else:
+            flash("Event not found.")
+
         return redirect("/admin")
 
     return render_template(
         "create_event.html",
         current_user=current_user,
         event_form=event_form,
-        delete_user=delete_form,
+        delete_form=delete_form,
+        upcoming_events=Event.query.all(),
     )
+
+
+@app.route("/delete_event/<int:event_id>", methods=["POST"])
+def delete_event(event_id):
+    current_user = get_current_user()
+    if not current_user:
+        flash("Please login.")
+        return redirect("/login")
+    if not current_user.is_admin:
+        flash("You are not an admin.")
+        return redirect("/")
+
+    event = Event.query.filter_by(id=event_id).first()
+    if not event:
+        flash("Event not found.")
+        return redirect("/admin")
+
+    db.session.delete(event)
+    db.session.commit()
+
+    flash("Event deleted successfully!")
+    return redirect("/admin")
 
 
 @app.route("/event")

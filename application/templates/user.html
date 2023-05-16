@@ -72,44 +72,20 @@
                     <div class="card">
                         <div class="card-body">
                           <div class="row">
-                            <div class="col-md-4">
-                              <div class="card mb-4">
+                            <div class="col-md-12">
+                              <div class="card mb-12">
                                 <div class="card-header">
                                   May 2023
                                 </div>
                                 <ul class="list-group list-group-flush">
-  {% for event in event %}
+  {% for event in upcoming_events %}
   <li class="list-group-item">{{ event.start_date }}: {{ event.title }}</li>
-  {% endfor %}
-                                  <li class="list-group-item">May 15: Rome Masters</li>
-                                  <li class="list-group-item">May 23: Roland Garros</li>
+{% endfor %}
+
                                 </ul>
                               </div>
                             </div>
-                            <div class="col-md-4">
-                              <div class="card mb-4">
-                                <div class="card-header">
-                                  June 2023
-                                </div>
-                                <ul class="list-group list-group-flush">
-                                  <li class="list-group-item">June 6: Halle Open</li>
-                                  <li class="list-group-item">June 13: Queen's Club Championships</li>
-                                  <li class="list-group-item">June 27: Wimbledon</li>
-                                </ul>
-                              </div>
-                            </div>
-                            <div class="col-md-4">
-                              <div class="card mb-4">
-                                <div class="card-header">
-                                  July 2023
-                                </div>
-                                <ul class="list-group list-group-flush">
-                                  <li class="list-group-item">July 11: Hamburg European Open</li>
-                                  <li class="list-group-item">July 18: Swiss Open</li>
-                                  <li class="list-group-item">July 31: Citi Open</li>
-                                </ul>
-                              </div>
-                            </div>
+                            
                           </div>
                         </div>
                       </div>
