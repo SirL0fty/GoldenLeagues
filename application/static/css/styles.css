@@ -526,7 +526,7 @@ ul.flashmsg {
         font-weight: 500;
         border-radius: 5px;
         margin-top: 10px;
-        padding: 5px 5px 5px 10px;
+        padding: 5px 10px;
 }
 
 .carousel-item {
@@ -641,4 +641,13 @@ ul.flashmsg {
 
 .user-section table td {
         text-align: center;
+}
+
+.event-link {
+        font-size: 16px;
+}
+
+.event-link:hover {
+
+        color: #2c2c2c;
 }

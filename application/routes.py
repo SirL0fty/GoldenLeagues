@@ -1,6 +1,13 @@
 #!/usr/bin/python
-from flask import flash, render_template, request, redirect, session
-from application import app, db
+from flask import (
+    flash,
+    render_template,
+    request,
+    redirect,
+    session,
+    get_flashed_messages,
+)
+from application import app, db, csrf
 from application.models import User, UserEvent, Event
 from application.forms import (
     RegisterForm,
@@ -43,6 +50,7 @@ def admin():
         return redirect("/login")
 
     news_form = NewsForm()
+    user_edit_form = EditForm(obj=user)  # Separate form variable for user edit
     event_form = EventForm()
     delete_form = DeleteForm()
     all_events = Event.query.all()
@@ -57,7 +65,8 @@ def admin():
         "admin.html",
         users=users,
         current_user=current_user,
-        form=news_form,
+        news_form=news_form,  # Use separate form variable for news form
+        user_edit_form=user_edit_form,  # Pass user edit form to the template
         event_form=event_form,
         delete_form=delete_form,
         upcoming_events=all_events,
@@ -65,19 +74,8 @@ def admin():
     )
 
 
-@app.route("/login")
-def login():
-    login_form = LoginForm()
-    current_user = get_current_user()
-    return render_template(
-        "/login.html",
-        login_form=login_form,
-        current_user=current_user,
-    )
-
-
 @app.route("/login", methods=["GET", "POST"])
-def validate_login():
+def login():
     login_form = LoginForm()
     current_user = get_current_user()
 
@@ -88,7 +86,7 @@ def validate_login():
             session[LOGGED_IN_USER] = user.id
             user.last_login = now()
             db.session.commit()
-            flash(f"{user.name} logged in successfully!")
+            flash(f"{user.name} logged in successfully!", "success")
 
             # check if user is an admin
             if user.is_admin:
@@ -96,10 +94,17 @@ def validate_login():
             else:
                 return redirect("/user")
 
-        flash("Invalid email or password.")
+        else:
+            flash("Invalid email or password.", "error")
+
+    # Get flashed messages and pass them to the template
+    messages = get_flashed_messages()
 
     return render_template(
-        "/login.html", login_form=login_form, current_user=current_user
+        "/login.html",
+        login_form=login_form,
+        current_user=current_user,
+        messages=messages,
     )
 
 
@@ -143,10 +148,31 @@ def logout():
 @app.route("/tennis")
 def tennis():
     current_user = get_current_user()
-    return render_template("tennis.html", current_user=current_user)
+
+    if current_user:
+        userevent = UserEvent.query.filter_by(user_id=current_user.id).all()
+    else:
+        userevent = []
+
+    all_events = Event.query.all()
+
+    for event in all_events:
+        date_obj = datetime.strptime(str(event.start_date), "%Y-%m-%d")
+        event.start_date = datetime.strftime(date_obj, "%d %B")
+        event.id = str(event.id)
+
+    event_id = str(all_events[0].id) if all_events else None
+
+    return render_template(
+        "tennis.html",
+        current_user=current_user,
+        userevent=userevent,
+        upcoming_events=all_events,
+        event_id=event_id,
+    )
 
 
-@app.route("/user")
+@app.route("/user", methods=["GET", "POST"])
 def user():
     current_user = get_current_user()
 
@@ -165,11 +191,50 @@ def user():
 
     for event in all_events:
         date_obj = datetime.strptime(str(event.start_date), "%Y-%m-%d")
-        event.start_date = datetime.strftime(date_obj, "%d %B")
+        event.start_date = date_obj.strftime("%d %B")
 
     if not user:
         flash("Unable to retrieve user information.")
         return redirect("/login")
+
+    if request.method == "POST":
+        event_id = request.form.get("event_id")
+        action = request.form.get("action")
+
+        event = Event.query.get(event_id)
+        if not event:
+            flash("Event not found.")
+            return redirect("/user")
+
+        if action == "register_event":
+            if event.is_registered(current_user):
+                flash("You are already registered for this event.")
+            else:
+                event.register_user(current_user)
+                db.session.commit()
+                flash("Event registration successful.")
+        elif action == "cancel_registration":
+            if not event.is_registered(current_user):
+                flash("You are not registered for this event.")
+            else:
+                user_event = UserEvent.query.filter_by(
+                    event_id=event.id, user_id=current_user.id
+                ).first()
+                if user_event:
+                    db.session.delete(user_event)
+                    event.start_date = datetime.strptime(
+                        str(event.start_date), "%Y-%m-%d"
+                    ).date()  # Convert start_date back to datetime object
+                    db.session.commit()
+                    flash("Event registration canceled.")
+                else:
+                    flash("You are not registered for this event.")
+        else:
+            flash("Invalid action.")
+
+        return redirect("/user")
+
+    delete_form = DeleteForm()
 
     return render_template(
         "user.html",
@@ -181,6 +246,7 @@ def user():
         current_user=current_user,
         userevent=userevent,
         upcoming_events=all_events,
+        delete_form=delete_form,
     )
 
 
@@ -192,7 +258,6 @@ def edit_user():
         return redirect("/login")
 
     user = User.query.filter_by(id=session.get(LOGGED_IN_USER)).first()
-    print("user", user, user.id)
     form = EditForm(obj=user)
     userevent = UserEvent.query.filter_by(user_id=current_user.id).all()
     all_events = Event.query.all()
@@ -205,7 +270,7 @@ def edit_user():
             user.profile_picture = form.profile_picture.data.read()
 
         db.session.commit()
-        flash("User updated successfully.")
+        flash("User details have been updated.")
         return redirect("/user")
 
     # Populate form fields with current user data
@@ -215,6 +280,15 @@ def edit_user():
     form.phone.data = current_user.phone
     form.club.data = current_user.club
 
+    delete_form = DeleteForm()
+
+    if delete_form.validate_on_submit():
+        # Handle delete user form submission
+        db.session.delete(current_user)
+        db.session.commit()
+        flash("User account has been deleted.")
+        return redirect("/login")
+
     # Get the previous user information
     prev_user = {
         "name": current_user.name,
@@ -223,9 +297,6 @@ def edit_user():
         "phone": current_user.phone,
         "club": current_user.club,
     }
-
-    delete_form = DeleteForm()
-    print("rendering edit user form")
 
     return render_template(
         "edit_user.html",
@@ -252,15 +323,18 @@ def delete_user(user_id):
         flash("Unable to retrieve user information.")
         return redirect("/login")
 
-    if current_user.id != user_id:
-        flash("You can only delete your own account.")
-        return redirect("/user/edit")
-
-    db.session.delete(user)
-    db.session.commit()
-    print("user deleted")
-    flash("User account has been deleted.")
-    return redirect("/")
+    if current_user.id == user_id:
+        # User is deleting their own account
+        db.session.delete(user)
+        db.session.commit()
+        flash("Your account has been deleted.")
+        return redirect("/login")
+    else:
+        # Admin is deleting a user from the admin page
+        db.session.delete(user)
+        db.session.commit()
+        flash("User account has been deleted.")
+        return redirect("/admin")
 
 
 @app.route("/post_news", methods=["GET", "POST"])
@@ -364,10 +438,16 @@ def delete_event(event_id):
         flash("Event not found.")
         return redirect("/admin")
 
-    db.session.delete(event)
-    db.session.commit()
+    delete_form = DeleteForm()
+    delete_form.csrf_token.data = request.form.get("csrf_token")
 
-    flash("Event deleted successfully!")
+    if delete_form.validate():
+        db.session.delete(event)
+        db.session.commit()
+        flash("Event deleted successfully!")
+    else:
+        flash("Invalid CSRF token.")
+
     return redirect("/admin")
 
 
@@ -375,4 +455,47 @@ def delete_event(event_id):
 def event():
     all_events = Event.query.all()
 
-    return render_template(event.html, event=event, all_events=all_events)
+    return render_template("event.html", all_events=all_events)
+
+
+@app.route("/register_event/<int:event_id>", methods=["GET", "POST", "DELETE"])
+def register_event(event_id):
+    current_user = get_current_user()
+    if not current_user:
+        flash("Please login.")
+        return redirect("/login")
+
+    event = Event.query.get(event_id)
+    if not event:
+        flash("Event not found.")
+        return redirect("/")
+
+    formatted_start_date = event.start_date.strftime("%d %B")
+
+    if request.method == "POST":
+        if event.is_registered(current_user):
+            flash("You are already registered for this event.")
+        else:
+            event.register_user(current_user)
+            registered_at = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            event.registered_at = registered_at
+            db.session.commit()
+            flash("Event registration successful.")
+        return redirect("/user")
+
+    elif request.method == "DELETE":
+        if not event.is_registered(current_user):
+            flash("You are not registered for this event.")
+        else:
+            user_event = UserEvent.query.filter_by(
+                event_id=event.id, user_id=current_user.id
+            ).first()
+            db.session.delete(user_event)
+            db.session.commit()
+            flash("Event registration canceled.")
+        return redirect("/user")
+
+    else:
+        return render_template(
+            "tennis.html", event=event, formatted_start_date=formatted_start_date
+        )

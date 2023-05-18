@@ -7,6 +7,7 @@ from wtforms import (
     FileField,
     TextAreaField,
     DateField,
+    HiddenField,
 )
 from wtforms.validators import DataRequired, Email, Length, Optional
 
@@ -40,6 +41,8 @@ class EditForm(FlaskForm):
 
 class DeleteForm(FlaskForm):
     submit = SubmitField("Delete Account")
+    id = HiddenField()
+    csrf_token = HiddenField()
 
 
 class NewsForm(FlaskForm):

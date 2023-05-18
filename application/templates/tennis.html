@@ -188,30 +188,30 @@ Sport is for Everyone! Enjoy it!</p>
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td class="bg-light">1</td>
-                  <td class="bg-danger text-white">2</td>
+                  <td>1</td>
+                  <td>2</td>
                 </tr>
                 <tr>
-                  <td class="bg-info text-white">3</td>
+                  <td>3</td>
                   <td>4</td>
                   <td>5</td>
                   <td>6</td>
                   <td>7</td>
                   <td>8</td>
-                  <td>9</td>
+                  <td class="bg-success text-white">9</t>
                 </tr>
                 <tr>
                   <td>10</td>
                   <td>11</td>
                   <td>12</td>
-                  <td class="bg-success text-white">13</td>
-                  <td>14</td>
+                  <td>13</td>
+                  <td class="bg-success text-white">14</>
                   <td>15</td>
                   <td>16</td>
                 </tr>
                 <tr>
                   <td>17</td>
-                  <td class="bg-warning text-white">18</td>
+                  <td>18</td>
                   <td>19</td>
                   <td>20</td>
                   <td>21</td>
@@ -225,16 +225,45 @@ Sport is for Everyone! Enjoy it!</p>
                   <td>27</td>
                   <td>28</td>
                   <td>29</td>
-                  <td>30</td>
+                  <td class="bg-success text-white">30</>
                 </tr>
               </tbody>
             </table>
           </div>
           <p>Upcoming Competitions:</p>
           <ul>
-            <li><strong>April 2 - Spring Open Tournament</strong></li>
-            <li><strong>April 3 - Youth Invitational</strong></li>
-            <li><strong>April 9 - Women's Doubles Championship</strong></li>
+{% if upcoming_events %}
+  {% for event in upcoming_events %}
+    {% if event %}
+      <li class="list-group-item">
+        <a href="#" data-bs-toggle="modal" data-bs-target="#eventModal{{ event.id }}" class="event-link">
+          {{ event.start_date }}: {{ event.title }}
+        </a>
+      </li>
+      <!-- Modal -->
+      <div class="modal fade" id="eventModal{{ event.id }}" tabindex="-1" aria-labelledby="eventModalLabel{{ event.id }}" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="eventModalLabel{{ event.id }}"><b>{{ event.title }}</b></h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <!-- Add event details here -->
+              <p><b>Date:</b> {{ event.start_date }}</p>
+              <p><b>Description:</b> {{ event.description }}</p>
+              <button type="button" class="btn btn-custom" data-bs-dismiss="modal">Register</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
+{% else %}
+  <li class="list-group-item">No upcoming events</li>
+{% endif %}
+
+
           </ul>
         </div>
       </div>

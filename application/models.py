@@ -38,7 +38,15 @@ class Event(db.Model):
     start_date = db.Column(db.Date, nullable=True)
     end_date = db.Column(db.Date, nullable=True)
     description = db.Column(db.Text, nullable=True)
-    user = db.relationship("User", secondary="userevent", backref="events")
+    registrations = db.relationship("UserEvent", backref="event")
+
+    def is_registered(self, user):
+        return any(reg.user == user for reg in self.registrations)
+
+    def register_user(self, user):
+        if not self.is_registered(user):
+            registration = UserEvent(user=user, event=self)
+            db.session.add(registration)
 
 
 class UserEvent(db.Model):
@@ -46,3 +54,5 @@ class UserEvent(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
     event_id = db.Column(db.Integer, db.ForeignKey("event.id"))
+
+    user = db.relationship("User", backref="registrations")
